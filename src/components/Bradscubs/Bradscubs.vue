@@ -13,7 +13,7 @@ const props = defineProps({
     <div class="bradscubs row">
         <div v-for="bradscub in props?.bradscubs" @key="bradscub.id" class="bradscubs_item">
             <RouterLink v-if="!bradscub.active" :to="bradscub.link">{{ bradscub.name }}</RouterLink>
-            <span v-else>доставкa</span>
+            <span v-else>{{ bradscub.name }}</span>
         </div>
     </div>
 </template>

@@ -13,7 +13,7 @@ const bradscubs = [
     },
     {
         id: 2,
-        name: ROUTES.delivery,
+        name: 'Доставка',
         active: true
     }
 ];
