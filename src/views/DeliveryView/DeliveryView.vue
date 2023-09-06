@@ -13,7 +13,7 @@ const bradscubs = [
     },
     {
         id: 2,
-        name: 'Доставка',
+        name: 'Доста',
         active: true
     }
 ];

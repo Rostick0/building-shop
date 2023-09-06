@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { computed, ref, watchEffect } from "vue";
+import { computed, ref, watch } from "vue";
 
 export const useFavoritesStore = defineStore('favorite', () => {
     const favorites = ref([]);
@@ -25,7 +25,7 @@ export const useFavoritesStore = defineStore('favorite', () => {
         favorites.value = oldFavorites;
     }
 
-    watchEffect(favorites, () => {
+    watch(favorites, () => {
         const favoritesJson = JSON.stringify(favorites.value);
         localStorage.setItem('favorites', favoritesJson);
     });
