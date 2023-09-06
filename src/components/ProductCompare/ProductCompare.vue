@@ -1,6 +1,6 @@
 <script setup>
-import { useComparisonsStore } from '@/app/stores/comparison';
-import { useFavoritesStore } from '@/app/stores/favorite';
+import { useComparisonsStore } from '@/app/stores/modules/comparison';
+import { useFavoritesStore } from '@/app/stores/modules/favorite';
 import { defineAsyncComponent } from 'vue';
 const ProductCart = defineAsyncComponent(() => import('@/components/ProductCart/ProductCart.vue'));
 const comparisonsStore = useComparisonsStore();

@@ -1,5 +1,5 @@
 <script setup>
-import { useComparisonsStore } from '@/app/stores/comparison';
+import { useComparisonsStore } from '@/app/stores/modules/comparison';
 import { defineProps } from 'vue';
 import { ROUTES } from '@/app/router/helper';
 import { storeToRefs } from 'pinia';

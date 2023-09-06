@@ -15,13 +15,10 @@ const bradscubs = [
         active: true
     }
 ];
-
-
 </script>
 
 <template>
     <LayoutShort>
-        <!-- <ProductCart :product="{ id: 1, name: '123' }"></ProductCart> -->
         <div class="text_page compare">
             <div class="container">
                 <div class="text_page_top">

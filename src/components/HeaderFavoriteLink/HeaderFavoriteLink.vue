@@ -1,6 +1,6 @@
 <script setup>
 import { ROUTES } from '@/app/router/helper';
-import { useFavoritesStore } from '@/app/stores/favorite';
+import { useFavoritesStore } from '@/app/stores/modules/favorite';
 import { storeToRefs } from 'pinia';
 const favoritesStore = useFavoritesStore();
 const { favoriteCount } = storeToRefs(favoritesStore);

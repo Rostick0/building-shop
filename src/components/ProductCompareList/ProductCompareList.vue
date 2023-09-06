@@ -1,5 +1,5 @@
 <script setup>
-import { useComparisonsStore } from '@/app/stores/comparison';
+import { useComparisonsStore } from '@/app/stores/modules/comparison';
 import { defineAsyncComponent } from 'vue';
 import { storeToRefs } from 'pinia';
 const ProductCompare = defineAsyncComponent(() => import('@/components/ProductCompare/ProductCompare.vue'));
@@ -9,6 +9,7 @@ const { comparisons, сomparisonСount } = storeToRefs(comparisonsStore);
 
 <template>
     <div v-if="сomparisonСount > 0" class="compare_list row">
-        <ProductCompare v-for="comparison in comparisons" @key="comparison?.data?.id" :product="comparison"></ProductCompare>
+        <ProductCompare v-for="comparison in comparisons" @key="comparison?.data?.id" :product="comparison">
+        </ProductCompare>
     </div>
 </template>
