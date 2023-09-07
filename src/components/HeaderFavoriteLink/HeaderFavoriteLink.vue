@@ -18,7 +18,7 @@ const { active, count } = props;
 </script>
 
 <template>
-    <RouterLink :to="ROUTES.compare" class="faw" :class="{ active }">
+    <RouterLink :to="ROUTES.favorite" class="faw" :class="{ active }">
         <i v-if="count">{{ favoriteCount }}</i>
         <svg width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path

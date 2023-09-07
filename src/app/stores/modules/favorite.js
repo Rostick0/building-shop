@@ -2,7 +2,17 @@ import { defineStore } from "pinia";
 import { computed, ref, watch } from "vue";
 
 export const useFavoritesStore = defineStore('favorite', () => {
-    const favorites = ref([]);
+    const favorites = ref([
+        {
+            id: 1,
+            image: '/images/catalog/product/Group 9042642 — копия.png',
+            name: 'Пила торцовочная электрическая КМ MS-1401/210 (680152) 1400 Вт',
+            price: 7400,
+            count: 100,
+            weight: 0.009,
+            voltage: 67
+        }
+    ]);
     const favoriteCount = computed(() => favorites?.length);
 
     const favoriteAdd = favorite => {
@@ -25,10 +35,14 @@ export const useFavoritesStore = defineStore('favorite', () => {
         favorites.value = oldFavorites;
     }
 
+    const favoriteClear = () => {
+        favorites.value = [];
+    }
+
     watch(favorites, () => {
         const favoritesJson = JSON.stringify(favorites.value);
         localStorage.setItem('favorites', favoritesJson);
     });
 
-    return { favorites, favoriteCount, favoriteAdd, favoriteUpdate, favoriteRemove };
+    return { favorites, favoriteCount, favoriteAdd, favoriteUpdate, favoriteRemove, favoriteClear };
 });

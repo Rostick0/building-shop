@@ -11,7 +11,7 @@ const bradscubs = [
     },
     {
         id: 2,
-        name: 'ИЗБРАННЫЕ ТОВАРЫ',
+        name: 'СРАВНЕНИЕ',
         active: true
     }
 ];

@@ -2248,9 +2248,9 @@
     position: relative;
 }
 
-.text_page.fav.catalog {
-    padding-bottom: 0
-}
+// .text_page.fav.catalog {
+//     padding-bottom: 0
+// }
 
 .text_page .col-3 {
     padding-left: 0;
@@ -2919,6 +2919,7 @@
     font-size: 22px;
     font-style: normal;
     font-weight: 900;
+    flex-basis: 100%;
     line-height: 106.3%;
     text-transform: uppercase;
 }
