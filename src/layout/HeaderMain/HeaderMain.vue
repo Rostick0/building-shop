@@ -1,6 +1,7 @@
 <script setup>
 import { ROUTES } from '@/app/router/helper';
 import HeaderCompareLink from '@/components/HeaderCompareLink/HeaderCompareLink.vue';
+import RecentArrivalsGoods from '@/components/RecentArrivalsGoods/RecentArrivalsGoods.vue';
 import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLink.vue';
 </script>
 
@@ -541,68 +542,7 @@ import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLi
                         <div class="mainbanner_bg_photo"></div>
                     </div>
                     <div class="mainbanner_products row">
-                        <div class="mainbanner_products_list">
-                            <div class="title_top row">
-                                <h2>последние <b>поступления</b></h2>
-                                <a href="">все товары</a>
-                            </div>
-                            <div class="mainbanner_products_list_wrap">
-                                <div class="swiper js_lastproduct_slider">
-                                    <div class="swiper-wrapper">
-
-                                        <div class="swiper-slide">
-                                            <div class="mainbanner_products_list_item">
-                                                <a href="" class="name">Дюбели Driva для гипсокартона</a>
-                                                <div class="desc">Всё очень просто - половину всех купленных
-                                                    стройматериалов Вы получаете по себестоимости, то есть по оптовой
-                                                    цене!</div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="mainbanner_products_list_item">
-                                                <a href="" class="name">Керамогранит - прочно и выгодно!</a>
-                                                <div class="desc">Всё очень просто - половину всех купленных
-                                                    стройматериалов Вы получаете по себестоимости, то есть по оптовой
-                                                    цене!</div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="mainbanner_products_list_item">
-                                                <a href="" class="name">Инструмент для захвата</a>
-                                                <div class="desc">Всё очень просто - половину всех купленных
-                                                    стройматериалов Вы получаете по себестоимости, то есть по оптовой
-                                                    цене!</div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="mainbanner_products_list_item">
-                                                <a href="" class="name">Дюбели Driva для гипсокартона</a>
-                                                <div class="desc">Всё очень просто - половину всех купленных
-                                                    стройматериалов Вы получаете по себестоимости, то есть по оптовой
-                                                    цене!</div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="mainbanner_products_list_item">
-                                                <a href="" class="name">Керамогранит - прочно и выгодно!</a>
-                                                <div class="desc">Всё очень просто - половину всех купленных
-                                                    стройматериалов Вы получаете по себестоимости, то есть по оптовой
-                                                    цене!</div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="mainbanner_products_list_item">
-                                                <a href="" class="name">Инструмент для захвата</a>
-                                                <div class="desc">Всё очень просто - половину всех купленных
-                                                    стройматериалов Вы получаете по себестоимости, то есть по оптовой
-                                                    цене!</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
+                        <RecentArrivalsGoods></RecentArrivalsGoods>
                         <div class="mainbanner_products_preview">
                             <div class="mainbanner_products_preview_item">
                                 <div class="photo"><img src="images/catalog/list/Mask%20group-2.png" /></div>

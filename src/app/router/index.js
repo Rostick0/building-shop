@@ -45,7 +45,7 @@ const router = createRouter({
       component: () => import('@/views/FavoriteView/FavoriteView.vue')
     },
     {
-      path: ROUTES.product,
+      path: ROUTES.product + '/:id',
       name: 'ProductView',
       component: () => import('@/views/ProductView/ProductView.vue')
     }

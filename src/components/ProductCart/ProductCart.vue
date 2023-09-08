@@ -14,11 +14,13 @@ const props = defineProps({
     }
 });
 
+const { product } = props;
+
 watch(count, () => {
     if (count.value < 1) return count.value = 1;
-})
 
-const { product } = props;
+    if (product?.count <= count.value) return product?.count;
+})
 </script>
 
 <template>
@@ -45,8 +47,7 @@ const { product } = props;
             <button class="btn">заказать</button>
             <div class="count">
                 <input type="button" value="-" @click="countDecrement">
-                <input type="number" step="1" min="1" max="10" id="num_count" name="quantity" v-model="count"
-                    title="Qty">
+                <input type="number" step="1" min="1" max="10" id="num_count" name="quantity" v-model="count" title="Qty">
                 <input type="button" value="+" @click="countIncrement">
             </div>
         </div>
