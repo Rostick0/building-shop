@@ -19,7 +19,7 @@
                     <span>ЗАКАЗАТЬ ЗВОНОК</span>
                 </div>
             </div>
-            <div class="promobanner promobanner_mob"><img src="images/banner_to_catalog.png"></div>
+            <div class="promobanner promobanner_mob"><img src="/images/banner_to_catalog.png"></div>
         </div>
     </div>
 </template>

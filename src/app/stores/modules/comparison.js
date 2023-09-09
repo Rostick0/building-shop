@@ -2,58 +2,64 @@ import { defineStore } from "pinia";
 import { computed, ref, watch } from "vue";
 
 export const useComparisonsStore = defineStore('comparison', () => {
-    const comparisons = ref([
-        {
-            data: {
-                id: 1,
-                image: '/images/catalog/product/Group 9042642 — копия.png',
-                name: 'Пила торцовочная электрическая КМ MS-1401/210 (680152) 1400 Вт',
-                price: 7400,
-                count: 100,
-                weight: 0.009,
-                voltage: 67
-            },
-            info: [
-                {
-                    name: 'Код',
-                    value: 'С-000283647'
+    const comparisons = ref(
+        // JSON.parse(localStorage.getItem('comparisons'))
+        // ??
+        [
+            {
+                data: {
+                    id: 1,
+                    image: '/images/catalog/product/Group 9042642 — копия.png',
+                    name: 'Пила торцовочная электрическая КМ MS-1401/210 (680152) 1400 Вт',
+                    price: 7400,
+                    count: 100,
+                    weight: 0.009,
+                    voltage: 67
                 },
-                {
-                    name: 'Артикул производителя',
-                    value: '014091'
-                },
-                {
-                    name: 'Страна происхождения',
-                    value: 'КИТАЙ'
-                },
-                {
-                    name: 'Диапазон регулирования сварочного тока в режиме MMA, А',
-                    value: '10-200'
-                },
-                {
-                    name: 'Бренд',
-                    value: 'FUBAG'
-                },
-                {
-                    name: 'Вес, кг',
-                    value: 0.009
-                },
-                {
-                    name: 'Напряжение холостого хода, В',
-                    value: 67
-                },
-                // code: '',
-                // article: '014091',
-                // country: 'КИТАЙ',
-                // weldingСurrent: {
-                //     min: 10,
-                //     max: 200
-                // },
-                // brand: 'FUBAG'
-            ]
-        }
-    ]);
-    const сomparisonСount = computed(() => comparisons?.value?.length);
+                info: [
+                    {
+                        name: 'Код',
+                        value: 'С-000283647'
+                    },
+                    {
+                        name: 'Артикул производителя',
+                        value: '014091'
+                    },
+                    {
+                        name: 'Страна происхождения',
+                        value: 'КИТАЙ'
+                    },
+                    {
+                        name: 'Диапазон регулирования сварочного тока в режиме MMA, А',
+                        value: '10-200'
+                    },
+                    {
+                        name: 'Бренд',
+                        value: 'FUBAG'
+                    },
+                    {
+                        name: 'Вес, кг',
+                        value: 0.009
+                    },
+                    {
+                        name: 'Напряжение холостого хода, В',
+                        value: 67
+                    },
+                    // code: '',
+                    // article: '014091',
+                    // country: 'КИТАЙ',
+                    // weldingСurrent: {
+                    //     min: 10,
+                    //     max: 200
+                    // },
+                    // brand: 'FUBAG'
+                ]
+            }
+        ]
+    );
+    const сomparisonСount = computed(() => comparisons?.value?.length ?? 0);
+
+    const checkComparison = (id) => comparisons?.value.findIndex(item => item.id === id) !== -1;
 
     const comparisonAdd = comparison => {
         const newComparsion = {
@@ -84,5 +90,5 @@ export const useComparisonsStore = defineStore('comparison', () => {
         localStorage.setItem('comparisons', comparisonsJson);
     });
 
-    return { comparisons, сomparisonСount, comparisonAdd, comparisonRemove };
+    return { comparisons, сomparisonСount, checkComparison, comparisonAdd, comparisonRemove };
 });

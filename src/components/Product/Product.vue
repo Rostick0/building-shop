@@ -46,20 +46,14 @@ const setThumbsSwiper = swiper => thumbsSwiper.value = swiper;
 
 const switcher = ref(1);
 const setSwitcher = number => switcher.value = number;
-
-console.log((sanitizeHtml('<p>123</p>')));
-
-const clean = sanitizeHtml('<b>132</b>');
 </script>
 
 <template>
     <div class="cartelement_top row">
-
         <div class="product_photo col-6 col-sm-12">
             <Swiper class="product_photo_slider_full" direction='horizontal' effect="fade" :speed="1200" grabCursor
                 :mousewheel="false" :freeMode="false" :fadeEffect="{ crossFade: true }" loop
                 :thumbs="{ swiper: thumbsSwiper }" :modules="[Thumbs, EffectFade, FreeMode]">
-
                 <SwiperSlide v-for="image in images" @key="image.id" class="product_photo_slider_item swiper-slide">
                     <div class="product_photo_slider_item_photo" :style="{ backgroundImage: `url(${image?.url})`, }"></div>
                     <div class="icons">

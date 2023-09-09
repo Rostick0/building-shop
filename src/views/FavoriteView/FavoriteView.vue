@@ -3,7 +3,9 @@ import Bradscubs from '@/components/Bradscubs/Bradscubs.vue';
 import ProductsFavorite from '@/components/ProductsFavorite/ProductsFavorite.vue';
 import AsideNav from '@/components/AsideNav/AsideNav.vue';
 import Pagination from '@/components/Pagination/Pagination.vue';
+import ClearFavorite from '@/components/ClearFavorite/ClearFavorite.vue';
 import LayoutDefault from '@/layout/LayoutDefault/LayoutDefault.vue';
+
 import { ROUTES } from '@/app/router/helper';
 
 const bradscubs = [
@@ -35,10 +37,7 @@ const bradscubs = [
                     </div>
                     <div class="fav_info_text row">
                         <div class="col-8 col-sm-12 row">
-                            <div class="clear_fav row">
-                                <span>Очистить избранное</span>
-                                <div class="icon"></div>
-                            </div>
+                            <ClearFavorite></ClearFavorite>
                             <p>При нажатии на кнопку ОТПРАВИТЬ ЗАЯВКАУ, будет сформирован весь нужный список указанный в
                                 избранном</p>
                         </div>

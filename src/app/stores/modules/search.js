@@ -1,9 +1,9 @@
 import axios from "axios";
 import { defineStore } from "pinia";
-import { computed, ref, watch } from "vue";
+import { ref } from "vue";
 
-export const usePopularStore = defineStore('popular', () => {
-    const popular = ref([
+export const useSearchStore = defineStore('search', () => {
+    const search = ref([
         {
             id: 1,
             image: '/images/catalog/product/Group 9042642 — копия.png',
@@ -15,13 +15,13 @@ export const usePopularStore = defineStore('popular', () => {
         }
     ]);
 
-    const popularAsyncGet = async () => {
+    const searchAsyncGet = async (title) => {
         return;
 
-        return axios.get('').
+        return axios.get('' + title).
             then(res => res.json())
-            .then(res => popular.value = res);
+            .then(res => search.value = res);
     }
 
-    return { popular, popularAsyncGet };
+    return { search, searchAsyncGet };
 });

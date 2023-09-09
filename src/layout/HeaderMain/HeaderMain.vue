@@ -3,18 +3,22 @@ import { ROUTES } from '@/app/router/helper';
 import HeaderCompareLink from '@/components/HeaderCompareLink/HeaderCompareLink.vue';
 import RecentArrivalsGoods from '@/components/RecentArrivalsGoods/RecentArrivalsGoods.vue';
 import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLink.vue';
+import MobileOpenMenu from '@/components/MobileOpenMenu/MobileOpenMenu.vue';
+import SearchMobile from '@/components/SearchMobile/SearchMobile.vue';
+import MainbannerForm from '@/components/MainbannerForm/MainbannerForm.vue';
+import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.vue';
 </script>
 
 <template>
     <div>
         <div class="mob_header">
-            <RouterLink to="/" class="logo"></RouterLink>
+            <RouterLink :to="ROUTES.main" class="logo"></RouterLink>
             <div class="mob_header_mes">
                 <div class="header_icon">
                     <HeaderCompareLink count />
                     <HeaderFavoriteLink count />
                 </div>
-                <div class="open_menu"></div>
+                <MobileOpenMenu />
             </div>
         </div>
 
@@ -455,7 +459,7 @@ import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLi
                                         </svg></div>
                                     <i>Обратный звонок</i>
                                 </div>
-                                <a href="" class="pdf">
+                                <a href="" class="pdf" download>
                                     <div class="icon"><svg width="15" height="14" viewBox="0 0 15 14" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -522,30 +526,14 @@ import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLi
                                 <span>Ваш заказ должен быть не менее 20.000 тысяч рублей</span>
                             </div>
                         </div>
-                        <div class="mainbanner_form">
-                            <div class="logo"></div>
-                            <form method="post" action="" onsubmit="return checkForm(this)">
-                                <input type="text" autocomplete="off" name="name" required="" placeholder="Ваше имя">
-                                <input type="tel" autocomplete="off" name="phone" required="" placeholder="Номер телефона">
-                                <input type="text" autocomplete="off" name="email" required=""
-                                    placeholder="Электронная почта">
-                                <button class="form_button" type="submit" name="web_form_submit"
-                                    value="отправить заявку">отправить заявку</button>
-                                <div class="agreement">
-                                    <input type="checkbox" class="custom-checkbox" name="happy" checked="" disabled="">
-                                    <label for="happy"></label>
-                                    <span>Нажимая на кнопку “отправить” вы даёте своё согласие на обработку персональных
-                                        данных</span>
-                                </div>
-                            </form>
-                        </div>
+                        <MainbannerForm />
                         <div class="mainbanner_bg_photo"></div>
                     </div>
                     <div class="mainbanner_products row">
                         <RecentArrivalsGoods></RecentArrivalsGoods>
                         <div class="mainbanner_products_preview">
                             <div class="mainbanner_products_preview_item">
-                                <div class="photo"><img src="images/catalog/list/Mask%20group-2.png" /></div>
+                                <div class="photo"><img src="/images/catalog/list/Mask%20group-2.png" /></div>
                                 <div class="text">
                                     <a href="" class="name">Все для окрашивания потолка</a>
                                     <div class="desc">Всё очень просто - половину всех купленных стройматериалов Вы
@@ -553,7 +541,7 @@ import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLi
                                 </div>
                             </div>
                             <div class="mainbanner_products_preview_item">
-                                <div class="photo"><img src="images/catalog/list/Mask%20group.png" /></div>
+                                <div class="photo"><img src="/images/catalog/list/Mask%20group.png" /></div>
                                 <div class="text">
                                     <a href="" class="name">Фасадные краски: все виды</a>
                                     <div class="desc">Всё очень просто - половину всех купленных стройматериалов Вы
@@ -565,18 +553,7 @@ import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLi
                 </div>
             </div>
         </div>
-
-        <form class="search_mob container">
-            <input type="text" placeholder="Поиск стройматериалов">
-            <button type="submit">
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M9.35542 9.33629L12 12M10.7778 5.88889C10.7778 8.58896 8.58896 10.7778 5.88889 10.7778C3.18883 10.7778 1 8.58896 1 5.88889C1 3.18883 3.18883 1 5.88889 1C8.58896 1 10.7778 3.18883 10.7778 5.88889Z"
-                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </button>
-        </form>
-
+        <SearchMobile />
         <div class="sub_description_mob container">
             <div class="icon">
                 <svg width="27" height="30" viewBox="0 0 27 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -588,20 +565,6 @@ import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLi
             <span>Ваш заказ должен быть не менее 20.000 тысяч рублей</span>
         </div>
 
-        <div class="mainbanner_form_mob container">
-            <div class="logo"></div>
-            <form method="post" action="" onsubmit="return checkForm(this)">
-                <input type="text" autocomplete="off" name="name" required placeholder="Ваше имя">
-                <input type="tel" autocomplete="off" name="phone" required placeholder="Номер телефона">
-                <input type="text" autocomplete="off" name="email" required placeholder="Электронная почта">
-                <button class="form_button" type="submit" name="web_form_submit" value="отправить заявку">отправить
-                    заявку</button>
-                <div class="agreement">
-                    <input type="checkbox" class="custom-checkbox" name="happy" checked disabled>
-                    <label for="happy"></label>
-                    <span>Нажимая на кнопку “отправить” вы даёте своё согласие на обработку персональных данных</span>
-                </div>
-            </form>
-        </div>
+        <MainbannerFormMob />
     </div>
 </template>

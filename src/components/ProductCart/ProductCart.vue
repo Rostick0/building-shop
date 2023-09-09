@@ -2,10 +2,9 @@
 import { defineProps, ref, watch } from 'vue';
 import { RouterLink } from 'vue-router';
 import { ROUTES } from '@/app/router/helper';
+import { useFavoritesStore } from '@/app/stores/modules/favorite';
 
-const count = ref(1);
-const countIncrement = () => count.value++;
-const countDecrement = () => count.value--;
+const { favoriteAdd } = useFavoritesStore();
 
 const props = defineProps({
     product: {
@@ -16,10 +15,19 @@ const props = defineProps({
 
 const { product } = props;
 
-watch(count, () => {
-    if (count.value < 1) return count.value = 1;
+const countCart = ref(product?.countCart ?? 1);
+console.log(countCart);
+const countCartIncrement = () => countCart.value++;
+const countCartDecrement = () => countCart.value--;
 
-    if (product?.count <= count.value) return product?.count;
+const cartAdd = () => {
+    favoriteAdd({ ...product, countCart });
+}
+
+watch(countCart, () => {
+    if (countCart.value < 1) return countCart.value = 1;
+
+    if (product?.countCart <= countCart.value) return product?.count;
 })
 </script>
 
@@ -40,15 +48,15 @@ watch(count, () => {
             </svg> В наличии: <span>{{ product?.count }} уп.</span>
         </div>
         <div class="prices">
-            <div class="price">{{ product?.price * count }} ₽</div>
+            <div class="price">{{ product?.price * countCart }} ₽</div>
             <div class="price_desc">Цена за штуку</div>
         </div>
         <div class="btns">
-            <button class="btn">заказать</button>
+            <button class="btn" @click="cartAdd">заказать</button>
             <div class="count">
-                <input type="button" value="-" @click="countDecrement">
-                <input type="number" step="1" min="1" max="10" id="num_count" name="quantity" v-model="count" title="Qty">
-                <input type="button" value="+" @click="countIncrement">
+                <input type="button" value="-" @click="countCartDecrement">
+                <input type="number" step="1" min="1" max="10" id="num_count" name="quantity" v-model="countCart" title="Qty">
+                <input type="button" value="+" @click="countCartIncrement">
             </div>
         </div>
     </div>

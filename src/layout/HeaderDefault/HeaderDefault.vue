@@ -1,6 +1,9 @@
 <script setup>
 import HeaderCompareLink from '@/components/HeaderCompareLink/HeaderCompareLink.vue';
 import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLink.vue';
+import MobileOpenMenu from '@/components/MobileOpenMenu/MobileOpenMenu.vue';
+import SearchMobile from '@/components/SearchMobile/SearchMobile.vue';
+import { ROUTES } from '@/app/router/helper';
 </script>
 
 <template>
@@ -12,18 +15,10 @@ import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLi
                     <HeaderCompareLink active count />
                     <HeaderFavoriteLink active count />
                 </div>
-                <div class="open_menu"></div>
+                <MobileOpenMenu></MobileOpenMenu>
             </div>
         </div>
-        <form class="search_mob container">
-            <input type="text" placeholder="Поиск стройматериалов">
-            <button type="submit"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M9.35542 9.33629L12 12M10.7778 5.88889C10.7778 8.58896 8.58896 10.7778 5.88889 10.7778C3.18883 10.7778 1 8.58896 1 5.88889C1 3.18883 3.18883 1 5.88889 1C8.58896 1 10.7778 3.18883 10.7778 5.88889Z"
-                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg></button>
-        </form>
+        <SearchMobile />
         <div class="header catalog">
             <div class="search_panel">
                 <div class="container row">
@@ -44,7 +39,6 @@ import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLi
                     <div class="col-2"></div>
                     <a href="tel:74954315426" class="phone"><b>+7 495</b> 431 54 26</a>
                     <div class="header_top_wrap_menu row">
-
                         <div class="btn js_order_call row">
                             <div class="icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +48,7 @@ import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLi
                                 </svg></div>
                             <i>Обратный звонок</i>
                         </div>
-                        <a href="" class="pdf">
+                        <a href="" class="pdf" download>
                             <div class="icon"><svg width="15" height="14" viewBox="0 0 15 14" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -72,7 +66,7 @@ import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLi
                                 </svg></div>
                             <span>Написать нам</span>
                         </a>
-                        <a href="">
+                        <RouterLink :to="ROUTES.delivery">
                             <div class="icon"><svg width="15" height="16" viewBox="0 0 15 16" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -83,8 +77,8 @@ import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLi
                                         stroke="white" stroke-width="1.2" />
                                 </svg></div>
                             <span>Доставка</span>
-                        </a>
-                        <a href="">
+                        </RouterLink>
+                        <RouterLink :to="ROUTES.contacts">
                             <div class="icon"><svg width="15" height="14" viewBox="0 0 15 14" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -98,7 +92,7 @@ import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLi
                                         fill="white" />
                                 </svg></div>
                             <span>Контакты</span>
-                        </a>
+                        </RouterLink>
                     </div>
                     <div class="header_icon">
                         <HeaderCompareLink active count />

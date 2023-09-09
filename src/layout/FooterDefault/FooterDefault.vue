@@ -1,5 +1,20 @@
 <script setup>
 import { ROUTES } from '@/app/router/helper.js';
+
+
+import { useMenuMobileStore } from '@/app/stores/modules/menuMobile';
+import { storeToRefs } from 'pinia';
+import { useRouter } from 'vue-router';
+
+const mobileStore = useMenuMobileStore();
+const { menuMobileSetFalse } = mobileStore;
+const { menuMobile } = storeToRefs(mobileStore);
+const router = useRouter();
+
+const setLink = url => {
+    menuMobileSetFalse();
+    router.push(url);
+}
 </script>
 
 <template>
@@ -22,7 +37,7 @@ import { ROUTES } from '@/app/router/helper.js';
                         </div>
                         <span>Написать нам</span>
                     </a>
-                    <a href="">
+                    <RouterLink :to="ROUTES.delivery">
                         <div class="icon">
                             <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -34,8 +49,8 @@ import { ROUTES } from '@/app/router/helper.js';
                             </svg>
                         </div>
                         <span>Доставка</span>
-                    </a>
-                    <a href="">
+                    </RouterLink>
+                    <RouterLink :to="ROUTES.contacts">
                         <div class="icon">
                             <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -50,8 +65,8 @@ import { ROUTES } from '@/app/router/helper.js';
                             </svg>
                         </div>
                         <span>Контакты</span>
-                    </a>
-                    <a href="">
+                    </RouterLink>
+                    <a href="" download>
                         <div class="icon">
                             <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -321,14 +336,14 @@ import { ROUTES } from '@/app/router/helper.js';
             </div>
         </div>
 
-        <div class="mobile_menu is-hidden">
-            <div class="close-menu"></div>
+        <div class="mobile_menu" :class="{ active: menuMobile }">
+            <div class="close-menu" @click="menuMobileSetFalse"></div>
             <div class="top_menu">
-                <RouterLink :to="ROUTES?.main">ГЛАВНАЯ</RouterLink>
-                <RouterLink :to="ROUTES?.catalog">Каталог</RouterLink>
+                <a @click.prevent="setLink(ROUTES?.main)">ГЛАВНАЯ</a>
+                <a @click.prevent="setLink(ROUTES?.catalog)">Каталог</a>
                 <a href="">Написать нам</a>
-                <RouterLink :to="ROUTES?.delivery">Доставка</RouterLink>
-                <RouterLink :to="ROUTES?.contacts">Контакты</RouterLink>
+                <a @click.prevent="setLink(ROUTES?.delivery)">Доставка</a>
+                <a @click.prevent="setLink(ROUTES?.contacts)">Контакты</a>
                 <a href="" download>Скачать прайс</a>
             </div>
             <a href="tel:74954315426" class="phone"><b>+7 495</b> 431 54 26</a>
