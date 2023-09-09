@@ -2,7 +2,6 @@
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-
 </script>
 
 <template>
