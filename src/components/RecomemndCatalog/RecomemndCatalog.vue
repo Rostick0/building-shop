@@ -4,42 +4,42 @@ import { ROUTES } from '@/app/router/helper';
 const links = [
     {
         id: 1,
-        link: ROUTES.catalog,
+        link: ROUTES.catalog + '/new',
         name: 'Стройматериалы'
     },
     {
-        id: 1,
-        link: ROUTES.catalog,
+        id: 2,
+        link: ROUTES.catalog + '/new',
         name: 'Отделочные материалы'
     },
     {
-        id: 1,
-        link: ROUTES.catalog,
+        id: 3,
+        link: ROUTES.catalog + '/new',
         name: 'Инструменты'
     },
     {
-        id: 1,
-        link: ROUTES.catalog,
+        id: 4,
+        link: ROUTES.catalog + '/new',
         name: 'Крепежные системы'
     },
     {
-        id: 1,
-        link: ROUTES.catalog,
+        id: 5,
+        link: ROUTES.catalog + '/new',
         name: 'Сантехническая группа'
     },
     {
-        id: 1,
-        link: ROUTES.catalog,
+        id: 6,
+        link: ROUTES.catalog + '/new',
         name: 'Отопление'
     },
     {
-        id: 1,
-        link: ROUTES.catalog,
+        id: 7,
+        link: ROUTES.catalog + '/new',
         name: 'Электрика и вентиляция'
     },
     {
-        id: 1,
-        link: ROUTES.catalog,
+        id: 8,
+        link: ROUTES.catalog + '/new',
         name: 'весь каталог'
     }
 ];

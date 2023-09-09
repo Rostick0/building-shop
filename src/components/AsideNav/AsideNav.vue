@@ -9,7 +9,7 @@ import { ROUTES } from '@/app/router/helper';
             <ul class="header_menu_nav">
                 <li class="header_menu_item active">
                     <div class="header_menu_item_wrap">
-                        <a href="">
+                        <RouterLink :to="ROUTES.catalog + '/new'">
                             <svg width="34" height="35" viewBox="0 0 34 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M10.7368 34.055H0V29.6501H10.7368V34.055ZM1.10121 32.9538H9.63563V30.7514H1.10121V32.9538Z"
@@ -65,75 +65,148 @@ import { ROUTES } from '@/app/router/helper';
                                     fill="#FF781F"></path>
                             </svg>
                             <span>Стройматериалы</span>
-                        </a>
+                        </RouterLink>
                     </div>
                     <ul>
                         <li class="active">
-                            <a href="">Изоляционные материалы</a>
+                            <RouterLink :to="ROUTES.catalog + '/new'">Изоляционные материалы</RouterLink>
                             <ul>
                                 <li class="header_menu_item_sub">
-                                    <a href="">Геотекстиль</a>
+                                    <RouterLink :to="ROUTES.catalog + '/new'">Геотекстиль</RouterLink>
                                     <div class="wrap_menu">
                                         <div class="wrap_menu_sub">
-                                            <a href="">
+                                            <RouterLink :to="ROUTES.catalog + '/new'">
                                                 <div class="wrap_menu_sub_title">
                                                     <span>ИЗОЛЯЦИОННЫЕ МАТЕРИАЛЫ</span>
                                                 </div>
-                                            </a>
+                                            </RouterLink>
                                             <ul>
                                                 <li>
-                                                    <a href="">Геотекстиль</a>
+                                                    <RouterLink :to="ROUTES.catalog + '/new'">Геотекстиль</RouterLink>
                                                     <div class="wrap_menu_sub2">
                                                         <div class="wrap_menu_title">
                                                             <span>Пленки, мембраны, ленты, клеи</span>
                                                         </div>
                                                         <ul>
-                                                            <li><a href="">Клеи изоляционные</a></li>
-                                                            <li><a href="">Ленты изоляционные</a></li>
-                                                            <li><a href="">Мембраны изоляционные</a></li>
-                                                            <li><a href="">Ножи изоляционные</a></li>
-                                                            <li><a href="">Пленки изоляционные</a></li>
+                                                            <li>
+                                                                <RouterLink :to="ROUTES.catalog + '/new'">Клеи изоляционные
+                                                                </RouterLink>
+                                                            </li>
+                                                            <li>
+                                                                <RouterLink :to="ROUTES.catalog + '/new'">Ленты изоляционные
+                                                                </RouterLink>
+                                                            </li>
+                                                            <li>
+                                                                <RouterLink :to="ROUTES.catalog + '/new'">Мембраны
+                                                                    изоляционные</RouterLink>
+                                                            </li>
+                                                            <li>
+                                                                <RouterLink :to="ROUTES.catalog + '/new'">Ножи изоляционные
+                                                                </RouterLink>
+                                                            </li>
+                                                            <li>
+                                                                <RouterLink :to="ROUTES.catalog + '/new'">Пленки
+                                                                    изоляционные</RouterLink>
+                                                            </li>
                                                         </ul>
                                                     </div>
                                                 </li>
-                                                <li><a href="">Гидроизоляция для дома</a></li>
-                                                <li><a href="">Пароизоляция для дома</a></li>
+                                                <li>
+                                                    <RouterLink :to="ROUTES.catalog + '/new'">Гидроизоляция для дома
+                                                    </RouterLink>
+                                                </li>
+                                                <li>
+                                                    <RouterLink :to="ROUTES.catalog + '/new'">Пароизоляция для дома
+                                                    </RouterLink>
+                                                </li>
 
-                                                <li><a href="">Пленки, мембраны, ленты, клеи</a></li>
-                                                <li><a href="">Техническая изоляция</a></li>
-                                                <li><a href="">КУтеплители для дома</a></li>
-                                                <li><a href="">Утеплители универсальные</a></li>
+                                                <li>
+                                                    <RouterLink :to="ROUTES.catalog + '/new'">Пленки, мембраны, ленты, клеи
+                                                    </RouterLink>
+                                                </li>
+                                                <li>
+                                                    <RouterLink :to="ROUTES.catalog + '/new'">Техническая изоляция
+                                                    </RouterLink>
+                                                </li>
+                                                <li>
+                                                    <RouterLink :to="ROUTES.catalog + '/new'">КУтеплители для дома
+                                                    </RouterLink>
+                                                </li>
+                                                <li>
+                                                    <RouterLink :to="ROUTES.catalog + '/new'">Утеплители универсальные
+                                                    </RouterLink>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="header_menu_item_sub"><a href="">Гидроизоляция для дома</a></li>
-                                <li class="header_menu_item_sub"><a href="">Пароизоляция для дома</a></li>
-                                <li class="header_menu_item_sub"><a href="">Пленки, мембраны, ленты, клеи</a></li>
-                                <li class="header_menu_item_sub"><a href="">Техническая изоляция</a></li>
-                                <li class="header_menu_item_sub"><a href="">Утеплители для дома</a></li>
-                                <li class="header_menu_item_sub"><a href="">Утеплители универсальные</a></li>
+                                <li class="header_menu_item_sub">
+                                    <RouterLink :to="ROUTES.catalog + '/new'">Гидроизоляция для дома</RouterLink>
+                                </li>
+                                <li class="header_menu_item_sub">
+                                    <RouterLink :to="ROUTES.catalog + '/new'">Пароизоляция для дома</RouterLink>
+                                </li>
+                                <li class="header_menu_item_sub">
+                                    <RouterLink :to="ROUTES.catalog + '/new'">Пленки, мембраны, ленты, клеи</RouterLink>
+                                </li>
+                                <li class="header_menu_item_sub">
+                                    <RouterLink :to="ROUTES.catalog + '/new'">Техническая изоляция</RouterLink>
+                                </li>
+                                <li class="header_menu_item_sub">
+                                    <RouterLink :to="ROUTES.catalog + '/new'">Утеплители для дома</RouterLink>
+                                </li>
+                                <li class="header_menu_item_sub">
+                                    <RouterLink :to="ROUTES.catalog + '/new'">Утеплители универсальные</RouterLink>
+                                </li>
                             </ul>
                         </li>
-                        <li class="header_menu_item_sub"><a href="">Битумные материалы</a></li>
-                        <li class="header_menu_item_sub"><a href="">Гипсовые материалы</a></li>
-                        <li class="header_menu_item_sub"><a href="">Засыпка сухая, керамзит</a></li>
-                        <li class="header_menu_item_sub"><a href="">Звукоизоляция и теплоизоляция</a></li>
-                        <li class="header_menu_item_sub"><a href="">Комплектующие для штукатурных фасадов</a></li>
-                        <li class="header_menu_item_sub"><a href="">Листовые материалы</a></li>
-                        <li class="header_menu_item_sub"><a href="">Материалы из древесины</a></li>
-                        <li class="header_menu_item_sub"><a href="">Монтажные материалы</a></li>
-                        <li class="header_menu_item_sub"><a href="">Общестроительные материалы</a></li>
-                        <li class="header_menu_item_sub"><a href="">Профили и комплектующие</a></li>
-                        <li class="header_menu_item_sub"><a href="">Ремонт, защита и гидроизоляция бетона</a></li>
-                        <li class="header_menu_item_sub"><a href="">Системы утепления фасадов</a></li>
-                        <li class="header_menu_item_sub"><a href="">Строительные ленты, сетки и серпянки</a></li>
-                        <li class="header_menu_item_sub"><a href="">Сухие смеси</a></li>
+                        <li class="header_menu_item_sub">
+                            <RouterLink :to="ROUTES.catalog + '/new'">Битумные материалы</RouterLink>
+                        </li>
+                        <li class="header_menu_item_sub">
+                            <RouterLink :to="ROUTES.catalog + '/new'">Гипсовые материалы</RouterLink>
+                        </li>
+                        <li class="header_menu_item_sub">
+                            <RouterLink :to="ROUTES.catalog + '/new'">Засыпка сухая, керамзит</RouterLink>
+                        </li>
+                        <li class="header_menu_item_sub">
+                            <RouterLink :to="ROUTES.catalog + '/new'">Звукоизоляция и теплоизоляция</RouterLink>
+                        </li>
+                        <li class="header_menu_item_sub">
+                            <RouterLink :to="ROUTES.catalog + '/new'">Комплектующие для штукатурных фасадов</RouterLink>
+                        </li>
+                        <li class="header_menu_item_sub">
+                            <RouterLink :to="ROUTES.catalog + '/new'">Листовые материалы</RouterLink>
+                        </li>
+                        <li class="header_menu_item_sub">
+                            <RouterLink :to="ROUTES.catalog + '/new'">Материалы из древесины</RouterLink>
+                        </li>
+                        <li class="header_menu_item_sub">
+                            <RouterLink :to="ROUTES.catalog + '/new'">Монтажные материалы</RouterLink>
+                        </li>
+                        <li class="header_menu_item_sub">
+                            <RouterLink :to="ROUTES.catalog + '/new'">Общестроительные материалы</RouterLink>
+                        </li>
+                        <li class="header_menu_item_sub">
+                            <RouterLink :to="ROUTES.catalog + '/new'">Профили и комплектующие</RouterLink>
+                        </li>
+                        <li class="header_menu_item_sub">
+                            <RouterLink :to="ROUTES.catalog + '/new'">Ремонт, защита и гидроизоляция бетона</RouterLink>
+                        </li>
+                        <li class="header_menu_item_sub">
+                            <RouterLink :to="ROUTES.catalog + '/new'">Системы утепления фасадов</RouterLink>
+                        </li>
+                        <li class="header_menu_item_sub">
+                            <RouterLink :to="ROUTES.catalog + '/new'">Строительные ленты, сетки и серпянки</RouterLink>
+                        </li>
+                        <li class="header_menu_item_sub">
+                            <RouterLink :to="ROUTES.catalog + '/new'">Сухие смеси</RouterLink>
+                        </li>
                     </ul>
                 </li>
                 <li class="header_menu_item">
                     <div class="header_menu_item_wrap">
-                        <a href="">
+                        <RouterLink :to="ROUTES.catalog + '/new'">
                             <svg width="33" height="39" viewBox="0 0 33 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M33.0002 18.9279V10.7011H31.4538V6.80416V6.1856V0H30.2167V6.1856H3.4021V10.7011H2.72168V11.9382H3.4021V16.4537H9.64955V38.3507H10.8867V16.4537H31.4538V11.9382H31.7631V17.8764L16.2991 20.4434V26.7836H14.5052V38.3507H19.3609V26.8146H17.5362V21.4949L33.0002 18.9279ZM30.2167 15.2166H4.63921V7.42272H30.2167V15.2166ZM18.0929 37.1136H15.7114V28.0517H18.0929V37.1136Z"
@@ -164,12 +237,12 @@ import { ROUTES } from '@/app/router/helper';
                                 </g>
                             </svg>
                             <span>Отделочные материалы</span>
-                        </a>
+                        </RouterLink>
                     </div>
                 </li>
                 <li class="header_menu_item">
                     <div class="header_menu_item_wrap">
-                        <a href="">
+                        <RouterLink :to="ROUTES.catalog + '/new'">
                             <svg width="33" height="22" viewBox="0 0 33 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M8.65574 7.81728L12.4426 7.84433V1.08203H8.65574V1.10908C7.11393 1.24433 5.89672 2.43449 5.70738 3.94924H0V5.03121H5.70738C5.89672 6.51892 7.11393 7.70908 8.65574 7.81728ZM9.73771 2.164H11.3607V6.76236H9.73771V2.164ZM6.7623 4.32793C6.7623 3.21892 7.60082 2.32629 8.65574 2.19105V6.76236C7.60082 6.62711 6.7623 5.70744 6.7623 4.62547V4.32793Z"
@@ -181,12 +254,12 @@ import { ROUTES } from '@/app/router/helper';
                                     fill="#FF781F"></path>
                             </svg>
                             <span>Инструменты</span>
-                        </a>
+                        </RouterLink>
                     </div>
                 </li>
                 <li class="header_menu_item">
                     <div class="header_menu_item_wrap">
-                        <a href="">
+                        <RouterLink :to="ROUTES.catalog + '/new'">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M16.2344 16.815L15.2227 15.8032L5.88923 25.1367L6.90098 26.1484L16.2344 16.815Z"
                                     fill="#FF781F"></path>
@@ -201,12 +274,12 @@ import { ROUTES } from '@/app/router/helper';
                                     fill="#FF781F"></path>
                             </svg>
                             <span>Крепежные системы</span>
-                        </a>
+                        </RouterLink>
                     </div>
                 </li>
                 <li class="header_menu_item">
                     <div class="header_menu_item_wrap">
-                        <a href="">
+                        <RouterLink :to="ROUTES.catalog + '/new'">
                             <svg width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M31 4.11618V0H22.5104V4.11618H23.6681V17.751H22.5104V21.8672H23.6166C23.2564 24.0797 21.327 25.7261 19.0373 25.7261C16.7477 25.7261 14.844 24.0539 14.4838 21.8672H15.5643V17.751H14.3809C13.995 12.3228 9.57013 7.9751 4.11618 7.71784V6.6888H0V15.1784H4.11618V13.9178C6.17427 14.1494 7.82075 15.7187 8.15519 17.751H7.07469V21.8672H8.25809C8.64398 27.4755 13.3261 31.9004 19.0373 31.9004C24.7743 31.9004 29.4307 27.527 29.8166 21.8672H31V17.751H29.8423V4.11618H31ZM3.08714 14.1494H1.02905V7.71784H3.08714V14.1494ZM4.11618 12.8888V8.74689C9.00415 9.00415 12.966 12.8631 13.3519 17.7253H9.20996C8.84979 15.1527 6.74025 13.1203 4.11618 12.8888ZM8.10373 20.8382V18.7801H14.5353V20.8382H8.10373ZM19.0373 30.8714C13.8921 30.8714 9.67303 26.8838 9.28714 21.8672H13.429C13.8149 24.6199 16.1817 26.7552 19.0373 26.7552C21.8672 26.7552 24.2598 24.6456 24.6456 21.8672H28.7876C28.4017 26.9353 24.1826 30.8714 19.0373 30.8714ZM29.971 18.7801V20.8382H23.5394V18.7801H29.971ZM24.6971 17.751V4.11618H28.8133V17.751H24.6971ZM23.5394 3.08714V1.02905H29.971V3.08714H23.5394Z"
@@ -216,12 +289,12 @@ import { ROUTES } from '@/app/router/helper';
                                     fill="#FF781F"></path>
                             </svg>
                             <span>Сантехническая группа</span>
-                        </a>
+                        </RouterLink>
                     </div>
                 </li>
                 <li class="header_menu_item">
                     <div class="header_menu_item_wrap">
-                        <a href="">
+                        <RouterLink :to="ROUTES.catalog + '/new'">
                             <svg width="34" height="38" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M29.75 36.4286H0V37.6429H29.75C32.0875 37.6429 34 35.7304 34 33.3929C34 31.0554 32.0875 29.1429 29.75 29.1429H23.375V28.5357H31.5714V27.0179C33.1196 25.7429 34 23.8911 34 21.8571V8.19643C34 4.70536 31.3286 1.85179 27.9286 1.54821V0H5.46429V4.25H27.9286V2.7625C30.6607 3.06607 32.7857 5.37321 32.7857 8.19643V21.8571C32.7857 23.1321 32.3607 24.3464 31.5714 25.2875V8.80357H1.82143V28.5357H10.0179V29.1429H7.58929V30.3571H10.0179V32.1786H23.375V30.3571H29.75C31.4196 30.3571 32.7857 31.7232 32.7857 33.3929C32.7857 35.0625 31.4196 36.4286 29.75 36.4286ZM26.7143 3.03571H6.67857V1.21429H26.7143V3.03571ZM3.03571 10.0179H30.3571V27.3214H3.03571V10.0179ZM11.2321 30.9643V28.5357H22.1607V30.9643H11.2321Z"
@@ -231,12 +304,12 @@ import { ROUTES } from '@/app/router/helper';
                                     fill="#FF781F"></path>
                             </svg>
                             <span>Отопление</span>
-                        </a>
+                        </RouterLink>
                     </div>
                 </li>
                 <li class="header_menu_item">
                     <div class="header_menu_item_wrap">
-                        <a href="">
+                        <RouterLink :to="ROUTES.catalog + '/new'">
                             <svg width="31" height="36" viewBox="0 0 31 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M2.8972 35.3458H0V12.1683C0 6.57667 4.5486 2.02808 10.1402 2.02808H31V4.92527H10.1402C6.14206 4.92527 2.8972 8.17013 2.8972 12.1683V35.3458ZM1.15888 34.187H1.73832V12.1683C1.73832 7.53275 5.50467 3.76639 10.1402 3.76639H29.8411V3.18695H10.1402C5.18598 3.18695 1.15888 7.21406 1.15888 12.1683V34.187Z"
@@ -260,12 +333,12 @@ import { ROUTES } from '@/app/router/helper';
                                 <path d="M25.8139 22.4534H21.1494V23.6122H25.8139V22.4534Z" fill="#FF781F"></path>
                             </svg>
                             <span>Электрика и вентиляция</span>
-                        </a>
+                        </RouterLink>
                     </div>
                 </li>
                 <li class="header_menu_item">
                     <div class="header_menu_item_wrap">
-                        <a href="">
+                        <RouterLink :to="ROUTES.catalog + '/new'">
                             <svg width="44" height="36" viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M19.8658 6.99536L4.29102 15.8897H8.92457V27.3061H11.4702V18.1505H18.0747V27.3061H30.807V15.8897H35.4411L19.8658 6.99536ZM24.2595 22.7805H19.9343V18.2539H24.2595V22.7805ZM29.0734 22.7805H24.7477V18.2539H29.0734V22.7805Z"
@@ -289,75 +362,74 @@ import { ROUTES } from '@/app/router/helper';
                                 <path d="M42.1571 29.9006H40.4785V30.3809H42.1571V29.9006Z" fill="#FF781F"></path>
                                 <path d="M4.37736 29.9006H2.69824V30.3809H4.05103V31.9216H4.53077V30.2425H4.37736V29.9006Z"
                                     fill="#FF781F"></path>
-                                <path d="M39.5525 25.8765H39.0732V27.5556H39.5525V25.8765Z" fill="#FF781F"></path>
-                                <path d="M39.5525 23.1772H39.0732V24.8569H39.5525V23.1772Z" fill="#FF781F"></path>
-                                <path d="M39.0726 29.9008H37.7793V30.381H39.4584V30.1067H39.5519V28.5745H39.0726V29.9008Z"
-                                    fill="#FF781F"></path>
-                                <path d="M39.5525 17.7808H39.0732V19.4604H39.5525V17.7808Z" fill="#FF781F"></path>
-                                <path d="M39.5525 20.4792H39.0732V22.1584H39.5525V20.4792Z" fill="#FF781F"></path>
-                                <path d="M39.5525 9.68433H39.0732V11.3639H39.5525V9.68433Z" fill="#FF781F"></path>
-                                <path d="M39.5525 6.98633H39.0732V8.66544H39.5525V6.98633Z" fill="#FF781F"></path>
-                                <path d="M39.0726 5.96745H39.5519V4.28784H39.4584H39.0726H37.7793V4.76809H39.0726V5.96745Z"
-                                    fill="#FF781F"></path>
-                                <path d="M39.5525 12.3835H39.0732V14.0627H39.5525V12.3835Z" fill="#FF781F"></path>
-                                <path
-                                    d="M9.09967 6.63602H9.57892V4.768H9.77482V4.28776H9.57892V0.744629H9.09967V4.28776H8.0957V4.768H9.09967V6.63602Z"
-                                    fill="#FF781F"></path>
-                                <path
-                                    d="M39.5523 15.7532V15.0815H39.0731V15.7532H37.2051V16.2334H39.0731V16.7617H39.5523V16.2334H43.6547V15.7532H39.5523Z"
-                                    fill="#FF781F"></path>
-                                <path d="M35.3562 8.0957H34.877V9.77482H35.3562V8.0957Z" fill="#FF781F"></path>
-                                <path d="M35.3562 26.9858H34.877V28.6655H35.3562V26.9858Z" fill="#FF781F"></path>
-                                <path d="M35.3562 21.5886H34.877V23.2677H35.3562V21.5886Z" fill="#FF781F"></path>
-                                <path d="M35.3562 16.1914H34.877V17.8705H35.3562V16.1914Z" fill="#FF781F"></path>
-                                <path d="M35.3562 18.8896H34.877V20.5693H35.3562V18.8896Z" fill="#FF781F"></path>
-                                <path d="M35.3562 2.69849H34.877V4.3776H35.0808V4.76789H36.7605V4.28765H35.3562V2.69849Z"
-                                    fill="#FF781F"></path>
-                                <path d="M35.3562 24.2866H34.877V25.9662H35.3562V24.2866Z" fill="#FF781F"></path>
-                                <path d="M35.3562 32.3823H34.877V33.7046H35.3562V32.3823Z" fill="#FF781F"></path>
-                                <path d="M35.3562 5.39673H34.877V7.07634H35.3562V5.39673Z" fill="#FF781F"></path>
-                                <path d="M35.3562 13.4929H34.877V15.1725H35.3562V13.4929Z" fill="#FF781F"></path>
-                                <path d="M35.3562 29.6843H34.877V31.3634H35.3562V30.381H36.7605V29.9007H35.3562V29.6843Z"
-                                    fill="#FF781F"></path>
-                                <path d="M35.3562 10.7939H34.877V12.4736H35.3562V10.7939Z" fill="#FF781F"></path>
-                                <path d="M35.3562 0H34.877V1.67961H35.3562V0Z" fill="#FF781F"></path>
-                                <path d="M4.53053 11.3521H4.05078V13.0317H4.53053V11.3521Z" fill="#FF781F"></path>
-                                <path d="M4.53053 0.558105H4.05078V2.23772H4.53053V0.558105Z" fill="#FF781F"></path>
-                                <path d="M4.53053 19.4482H4.05078V21.1279H4.53053V19.4482Z" fill="#FF781F"></path>
-                                <path d="M4.53053 8.65381H4.05078V10.3329H4.53053V8.65381Z" fill="#FF781F"></path>
-                                <path d="M4.53053 22.1467H4.05078V23.8258H4.53053V22.1467Z" fill="#FF781F"></path>
-                                <path d="M4.53053 24.845H4.05078V26.5246H4.53053V24.845Z" fill="#FF781F"></path>
-                                <path d="M4.53053 32.9412H4.05078V34.2635H4.53053V32.9412Z" fill="#FF781F"></path>
-                                <path d="M4.05103 4.93595H4.53077V3.25684H4.05103V4.28779H2.69824V4.76804H4.05103V4.93595Z"
-                                    fill="#FF781F"></path>
-                                <path d="M4.53053 27.5439H4.05078V29.2236H4.53053V27.5439Z" fill="#FF781F"></path>
-                                <path d="M4.53053 5.95532H4.05078V7.63494H4.53053V5.95532Z" fill="#FF781F"></path>
-                                <path d="M4.53053 16.7498H4.05078V18.4289H4.53053V16.7498Z" fill="#FF781F"></path>
-                                <path d="M4.53053 14.051H4.05078V15.7306H4.53053V14.051Z" fill="#FF781F"></path>
-                                <path
-                                    d="M18.0356 34.2134H11.2551V32.9456H10.7754V34.2134V34.6936V35.962H11.2551V34.6936H18.0356V35.962H18.5153V32.9456H18.0356V34.2134Z"
-                                    fill="#FF781F"></path>
-                            </svg>
-                            <span>продукция grand line</span>
-                        </a>
-                    </div>
-                </li>
-                <li class="header_menu_item">
-                    <div class="header_menu_item_wrap">
-                        <a href="" download>
-                            <svg width="32" height="29" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M31.4314 18.7215C30.5456 17.8038 28.5772 17.3449 25.9199 17.3449C24.3452 17.3449 22.6721 17.5285 20.7037 17.8038C18.6195 15.9835 16.8881 13.8413 15.5859 11.4715C16.5701 8.71835 17.259 6.05696 17.259 4.03797C17.259 2.47785 16.6685 0 14.3064 0C13.6175 0 13.027 0.367089 12.6333 0.917722C11.6491 2.56962 12.0428 6.24051 13.9128 10.0949C12.5468 13.778 10.9023 17.3662 8.9918 20.8323C3.77559 22.8513 0.330919 25.0538 0.0356613 26.7975C-0.161177 27.6234 0.429338 29 2.49614 29C5.54713 29 8.89338 24.8703 11.4523 20.6487C14.4062 19.7016 17.4331 18.9653 20.5068 18.4462C24.2468 21.4747 27.4946 21.9335 29.0693 21.9335C32.2187 21.9335 32.514 19.8228 31.4314 18.7215ZM13.1254 1.19304C13.9128 0.0917722 15.6843 0.458861 15.6843 2.66139C15.6843 4.12975 15.1922 6.51582 14.208 9.26899C12.4365 5.41456 12.4365 2.38608 13.1254 1.19304ZM0.626176 26.8892C0.921433 25.4209 3.87401 23.4019 8.4997 21.6582C5.94081 25.6962 3.38191 28.2658 1.80721 28.2658C0.823014 28.2658 0.527757 27.4399 0.626176 26.8892ZM20.0147 17.8956C17.2416 18.3774 14.511 19.0523 11.846 19.9146C13.3026 17.4629 14.4897 14.8801 15.389 12.2057C16.6826 14.2672 18.2355 16.1774 20.0147 17.8956ZM21.2942 18.2627C24.4436 17.8038 27.1009 17.8956 28.2819 18.0791C31.1361 18.6297 30.1519 21.8418 27.0025 21.1076C24.7389 20.6487 22.8689 19.4557 21.2942 18.2627Z"
-                                    fill="#FF781F"></path>
-                            </svg>
-                            <span>скачать прай-лист</span>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-            <div class="promobanner">
-                <img src="/images/banner_to_catalog.png">
-            </div>
+                            <path d="M39.5525 25.8765H39.0732V27.5556H39.5525V25.8765Z" fill="#FF781F"></path>
+                            <path d="M39.5525 23.1772H39.0732V24.8569H39.5525V23.1772Z" fill="#FF781F"></path>
+                            <path d="M39.0726 29.9008H37.7793V30.381H39.4584V30.1067H39.5519V28.5745H39.0726V29.9008Z"
+                                fill="#FF781F"></path>
+                            <path d="M39.5525 17.7808H39.0732V19.4604H39.5525V17.7808Z" fill="#FF781F"></path>
+                            <path d="M39.5525 20.4792H39.0732V22.1584H39.5525V20.4792Z" fill="#FF781F"></path>
+                            <path d="M39.5525 9.68433H39.0732V11.3639H39.5525V9.68433Z" fill="#FF781F"></path>
+                            <path d="M39.5525 6.98633H39.0732V8.66544H39.5525V6.98633Z" fill="#FF781F"></path>
+                            <path d="M39.0726 5.96745H39.5519V4.28784H39.4584H39.0726H37.7793V4.76809H39.0726V5.96745Z"
+                                fill="#FF781F"></path>
+                            <path d="M39.5525 12.3835H39.0732V14.0627H39.5525V12.3835Z" fill="#FF781F"></path>
+                            <path
+                                d="M9.09967 6.63602H9.57892V4.768H9.77482V4.28776H9.57892V0.744629H9.09967V4.28776H8.0957V4.768H9.09967V6.63602Z"
+                                fill="#FF781F"></path>
+                            <path
+                                d="M39.5523 15.7532V15.0815H39.0731V15.7532H37.2051V16.2334H39.0731V16.7617H39.5523V16.2334H43.6547V15.7532H39.5523Z"
+                                fill="#FF781F"></path>
+                            <path d="M35.3562 8.0957H34.877V9.77482H35.3562V8.0957Z" fill="#FF781F"></path>
+                            <path d="M35.3562 26.9858H34.877V28.6655H35.3562V26.9858Z" fill="#FF781F"></path>
+                            <path d="M35.3562 21.5886H34.877V23.2677H35.3562V21.5886Z" fill="#FF781F"></path>
+                            <path d="M35.3562 16.1914H34.877V17.8705H35.3562V16.1914Z" fill="#FF781F"></path>
+                            <path d="M35.3562 18.8896H34.877V20.5693H35.3562V18.8896Z" fill="#FF781F"></path>
+                            <path d="M35.3562 2.69849H34.877V4.3776H35.0808V4.76789H36.7605V4.28765H35.3562V2.69849Z"
+                                fill="#FF781F"></path>
+                            <path d="M35.3562 24.2866H34.877V25.9662H35.3562V24.2866Z" fill="#FF781F"></path>
+                            <path d="M35.3562 32.3823H34.877V33.7046H35.3562V32.3823Z" fill="#FF781F"></path>
+                            <path d="M35.3562 5.39673H34.877V7.07634H35.3562V5.39673Z" fill="#FF781F"></path>
+                            <path d="M35.3562 13.4929H34.877V15.1725H35.3562V13.4929Z" fill="#FF781F"></path>
+                            <path d="M35.3562 29.6843H34.877V31.3634H35.3562V30.381H36.7605V29.9007H35.3562V29.6843Z"
+                                fill="#FF781F"></path>
+                            <path d="M35.3562 10.7939H34.877V12.4736H35.3562V10.7939Z" fill="#FF781F"></path>
+                            <path d="M35.3562 0H34.877V1.67961H35.3562V0Z" fill="#FF781F"></path>
+                            <path d="M4.53053 11.3521H4.05078V13.0317H4.53053V11.3521Z" fill="#FF781F"></path>
+                            <path d="M4.53053 0.558105H4.05078V2.23772H4.53053V0.558105Z" fill="#FF781F"></path>
+                            <path d="M4.53053 19.4482H4.05078V21.1279H4.53053V19.4482Z" fill="#FF781F"></path>
+                            <path d="M4.53053 8.65381H4.05078V10.3329H4.53053V8.65381Z" fill="#FF781F"></path>
+                            <path d="M4.53053 22.1467H4.05078V23.8258H4.53053V22.1467Z" fill="#FF781F"></path>
+                            <path d="M4.53053 24.845H4.05078V26.5246H4.53053V24.845Z" fill="#FF781F"></path>
+                            <path d="M4.53053 32.9412H4.05078V34.2635H4.53053V32.9412Z" fill="#FF781F"></path>
+                            <path d="M4.05103 4.93595H4.53077V3.25684H4.05103V4.28779H2.69824V4.76804H4.05103V4.93595Z"
+                                fill="#FF781F"></path>
+                            <path d="M4.53053 27.5439H4.05078V29.2236H4.53053V27.5439Z" fill="#FF781F"></path>
+                            <path d="M4.53053 5.95532H4.05078V7.63494H4.53053V5.95532Z" fill="#FF781F"></path>
+                            <path d="M4.53053 16.7498H4.05078V18.4289H4.53053V16.7498Z" fill="#FF781F"></path>
+                            <path d="M4.53053 14.051H4.05078V15.7306H4.53053V14.051Z" fill="#FF781F"></path>
+                            <path
+                                d="M18.0356 34.2134H11.2551V32.9456H10.7754V34.2134V34.6936V35.962H11.2551V34.6936H18.0356V35.962H18.5153V32.9456H18.0356V34.2134Z"
+                                fill="#FF781F"></path>
+                        </svg>
+                        <span>продукция grand line</span>
+                    </RouterLink>
+                </div>
+            </li>
+            <li class="header_menu_item">
+                <div class="header_menu_item_wrap">
+                    <a href="" download>
+                        <svg width="32" height="29" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M31.4314 18.7215C30.5456 17.8038 28.5772 17.3449 25.9199 17.3449C24.3452 17.3449 22.6721 17.5285 20.7037 17.8038C18.6195 15.9835 16.8881 13.8413 15.5859 11.4715C16.5701 8.71835 17.259 6.05696 17.259 4.03797C17.259 2.47785 16.6685 0 14.3064 0C13.6175 0 13.027 0.367089 12.6333 0.917722C11.6491 2.56962 12.0428 6.24051 13.9128 10.0949C12.5468 13.778 10.9023 17.3662 8.9918 20.8323C3.77559 22.8513 0.330919 25.0538 0.0356613 26.7975C-0.161177 27.6234 0.429338 29 2.49614 29C5.54713 29 8.89338 24.8703 11.4523 20.6487C14.4062 19.7016 17.4331 18.9653 20.5068 18.4462C24.2468 21.4747 27.4946 21.9335 29.0693 21.9335C32.2187 21.9335 32.514 19.8228 31.4314 18.7215ZM13.1254 1.19304C13.9128 0.0917722 15.6843 0.458861 15.6843 2.66139C15.6843 4.12975 15.1922 6.51582 14.208 9.26899C12.4365 5.41456 12.4365 2.38608 13.1254 1.19304ZM0.626176 26.8892C0.921433 25.4209 3.87401 23.4019 8.4997 21.6582C5.94081 25.6962 3.38191 28.2658 1.80721 28.2658C0.823014 28.2658 0.527757 27.4399 0.626176 26.8892ZM20.0147 17.8956C17.2416 18.3774 14.511 19.0523 11.846 19.9146C13.3026 17.4629 14.4897 14.8801 15.389 12.2057C16.6826 14.2672 18.2355 16.1774 20.0147 17.8956ZM21.2942 18.2627C24.4436 17.8038 27.1009 17.8956 28.2819 18.0791C31.1361 18.6297 30.1519 21.8418 27.0025 21.1076C24.7389 20.6487 22.8689 19.4557 21.2942 18.2627Z"
+                                fill="#FF781F"></path>
+                        </svg>
+                        <span>скачать прай-лист</span>
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <div class="promobanner">
+            <img src="/images/banner_to_catalog.png">
         </div>
     </div>
-</template>
+</div></template>

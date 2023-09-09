@@ -29,7 +29,7 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                     <ul class="header_menu_nav">
                         <li class="header_menu_item">
                             <div class="header_menu_item_wrap">
-                                <a href="">
+                                <RouterLink :to="ROUTES.catalog + '/new'">
                                     <svg width="34" height="35" viewBox="0 0 34 35" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -88,10 +88,10 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                                             fill="#FF781F" />
                                     </svg>
                                     <span>Стройматериалы</span>
-                                </a>
+                                </RouterLink>
                                 <div class="wrap_menu">
                                     <div class="wrap_menu_sub">
-                                        <a href="">
+                                        <RouterLink :to="ROUTES.catalog + '/new'">
                                             <div class="wrap_menu_sub_title">
                                                 <svg width="34" height="35" viewBox="0 0 34 35" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
@@ -156,47 +156,121 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                                                 </svg>
                                                 <span>Стройматериалы</span>
                                             </div>
-                                        </a>
+                                        </RouterLink>
                                         <ul>
                                             <li>
-                                                <a href="">Битумные материалы</a>
+                                                <RouterLink :to="ROUTES.catalog + '/new'">Битумные материалы</RouterLink>
                                                 <div class="wrap_menu_sub2">
                                                     <div class="wrap_menu_title">
                                                         <span>Расходные материалы</span>
                                                     </div>
                                                     <ul>
-                                                        <li><a href="">Биты</a></li>
-                                                        <li><a href="">Запчасти и комплектующие для
-                                                                электроинструмента</a></li>
-                                                        <li><a href="">Инструмент для резки и шлифования</a></li>
-                                                        <li><a href="">Лезвия для скребков</a></li>
-                                                        <li><a href="">Лезвия сменные сегментированные</a></li>
-                                                        <li><a href="">Лезвия сменные трапецевидные</a></li>
-                                                        <li><a href="">Обтирочные материалы</a></li>
-                                                        <li><a href="">Полотна для ножовок</a></li>
-                                                        <li><a href="">Полотна для сабельной пилы</a></li>
-                                                        <li><a href="">Полотна для электролобзика</a></li>
-                                                        <li><a href="">Сверла, буры, коронки, ударный инструмент</a>
+                                                        <li>
+                                                            <RouterLink :to="ROUTES.catalog + '/new'">Биты</RouterLink>
                                                         </li>
-                                                        <li><a href="">Скобы</a></li>
-                                                        <li><a href="">Стержни клеевые</a></li>
+                                                        <li>
+                                                            <RouterLink :to="ROUTES.catalog + '/new'">Запчасти и
+                                                                комплектующие для
+                                                                электроинструмента</RouterLink>
+                                                        </li>
+                                                        <li>
+                                                            <RouterLink :to="ROUTES.catalog + '/new'">Инструмент для резки и
+                                                                шлифования</RouterLink>
+                                                        </li>
+                                                        <li>
+                                                            <RouterLink :to="ROUTES.catalog + '/new'">Лезвия для скребков
+                                                            </RouterLink>
+                                                        </li>
+                                                        <li>
+                                                            <RouterLink :to="ROUTES.catalog + '/new'">Лезвия сменные
+                                                                сегментированные</RouterLink>
+                                                        </li>
+                                                        <li>
+                                                            <RouterLink :to="ROUTES.catalog + '/new'">Лезвия сменные
+                                                                трапецевидные</RouterLink>
+                                                        </li>
+                                                        <li>
+                                                            <RouterLink :to="ROUTES.catalog + '/new'">Обтирочные материалы
+                                                            </RouterLink>
+                                                        </li>
+                                                        <li>
+                                                            <RouterLink :to="ROUTES.catalog + '/new'">Полотна для ножовок
+                                                            </RouterLink>
+                                                        </li>
+                                                        <li>
+                                                            <RouterLink :to="ROUTES.catalog + '/new'">Полотна для сабельной
+                                                                пилы</RouterLink>
+                                                        </li>
+                                                        <li>
+                                                            <RouterLink :to="ROUTES.catalog + '/new'">Полотна для
+                                                                электролобзика</RouterLink>
+                                                        </li>
+                                                        <li>
+                                                            <RouterLink :to="ROUTES.catalog + '/new'">Сверла, буры, коронки,
+                                                                ударный инструмент</RouterLink>
+                                                        </li>
+                                                        <li>
+                                                            <RouterLink :to="ROUTES.catalog + '/new'">Скобы</RouterLink>
+                                                        </li>
+                                                        <li>
+                                                            <RouterLink :to="ROUTES.catalog + '/new'">Стержни клеевые
+                                                            </RouterLink>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </li>
-                                            <li><a href="">Гипсовые материалы</a></li>
-                                            <li><a href="">Засыпка сухая, керамзит</a></li>
-                                            <li><a href="">Звукоизоляция и теплоизоляция</a></li>
-                                            <li><a href="">Изоляционные материалы</a></li>
-                                            <li><a href="">Комплектующие для штукатурных фасадов</a></li>
-                                            <li><a href="">Листовые материалы</a></li>
-                                            <li><a href="">Материалы из древесины</a></li>
-                                            <li><a href="">Монтажные материалы</a></li>
-                                            <li><a href="">Общестроительные материалы</a></li>
-                                            <li><a href="">Профили и комплектующие</a></li>
-                                            <li><a href="">Ремонт, защита и гидроизоляция бетона</a></li>
-                                            <li><a href="">Системы утепления фасадов</a></li>
-                                            <li><a href="">Строительные ленты, сетки и серпянки</a></li>
-                                            <li><a href="">Сухие смеси</a></li>
+                                            <li>
+                                                <RouterLink :to="ROUTES.catalog + '/new'">Гипсовые материалы</RouterLink>
+                                            </li>
+                                            <li>
+                                                <RouterLink :to="ROUTES.catalog + '/new'">Засыпка сухая, керамзит
+                                                </RouterLink>
+                                            </li>
+                                            <li>
+                                                <RouterLink :to="ROUTES.catalog + '/new'">Звукоизоляция и теплоизоляция
+                                                </RouterLink>
+                                            </li>
+                                            <li>
+                                                <RouterLink :to="ROUTES.catalog + '/new'">Изоляционные материалы
+                                                </RouterLink>
+                                            </li>
+                                            <li>
+                                                <RouterLink :to="ROUTES.catalog + '/new'">Комплектующие для штукатурных
+                                                    фасадов</RouterLink>
+                                            </li>
+                                            <li>
+                                                <RouterLink :to="ROUTES.catalog + '/new'">Листовые материалы</RouterLink>
+                                            </li>
+                                            <li>
+                                                <RouterLink :to="ROUTES.catalog + '/new'">Материалы из древесины
+                                                </RouterLink>
+                                            </li>
+                                            <li>
+                                                <RouterLink :to="ROUTES.catalog + '/new'">Монтажные материалы</RouterLink>
+                                            </li>
+                                            <li>
+                                                <RouterLink :to="ROUTES.catalog + '/new'">Общестроительные материалы
+                                                </RouterLink>
+                                            </li>
+                                            <li>
+                                                <RouterLink :to="ROUTES.catalog + '/new'">Профили и комплектующие
+                                                </RouterLink>
+                                            </li>
+                                            <li>
+                                                <RouterLink :to="ROUTES.catalog + '/new'">Ремонт, защита и гидроизоляция
+                                                    бетона</RouterLink>
+                                            </li>
+                                            <li>
+                                                <RouterLink :to="ROUTES.catalog + '/new'">Системы утепления фасадов
+                                                </RouterLink>
+                                            </li>
+                                            <li>
+                                                <RouterLink :to="ROUTES.catalog + '/new'">Строительные ленты, сетки и
+                                                    серпянки</RouterLink>
+                                            </li>
+                                            <li>
+                                                <RouterLink :to="ROUTES.catalog + '/new'">Сухие смеси</RouterLink>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -204,7 +278,7 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                         </li>
                         <li class="header_menu_item">
                             <div class="header_menu_item_wrap">
-                                <a href="">
+                                <RouterLink :to="ROUTES.catalog + '/new'">
                                     <svg width="33" height="39" viewBox="0 0 33 39" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -236,12 +310,12 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                                         </g>
                                     </svg>
                                     <span>Отделочные материалы</span>
-                                </a>
+                                </RouterLink>
                             </div>
                         </li>
                         <li class="header_menu_item">
                             <div class="header_menu_item_wrap">
-                                <a href="">
+                                <RouterLink :to="ROUTES.catalog + '/new'">
                                     <svg width="33" height="22" viewBox="0 0 33 22" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -254,12 +328,12 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                                             fill="#FF781F" />
                                     </svg>
                                     <span>Инструменты</span>
-                                </a>
+                                </RouterLink>
                             </div>
                         </li>
                         <li class="header_menu_item">
                             <div class="header_menu_item_wrap">
-                                <a href="">
+                                <RouterLink :to="ROUTES.catalog + '/new'">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -276,12 +350,12 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                                             fill="#FF781F" />
                                     </svg>
                                     <span>Крепежные системы</span>
-                                </a>
+                                </RouterLink>
                             </div>
                         </li>
                         <li class="header_menu_item">
                             <div class="header_menu_item_wrap">
-                                <a href="">
+                                <RouterLink :to="ROUTES.catalog + '/new'">
                                     <svg width="31" height="32" viewBox="0 0 31 32" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -292,12 +366,12 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                                             fill="#FF781F" />
                                     </svg>
                                     <span>Сантехническая группа</span>
-                                </a>
+                                </RouterLink>
                             </div>
                         </li>
                         <li class="header_menu_item">
                             <div class="header_menu_item_wrap">
-                                <a href="">
+                                <RouterLink :to="ROUTES.catalog + '/new'">
                                     <svg width="34" height="38" viewBox="0 0 34 38" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -308,12 +382,12 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                                             fill="#FF781F" />
                                     </svg>
                                     <span>Отопление</span>
-                                </a>
+                                </RouterLink>
                             </div>
                         </li>
                         <li class="header_menu_item">
                             <div class="header_menu_item_wrap">
-                                <a href="">
+                                <RouterLink :to="ROUTES.catalog + '/new'">
                                     <svg width="31" height="36" viewBox="0 0 31 36" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -338,12 +412,12 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                                         <path d="M25.8139 22.4534H21.1494V23.6122H25.8139V22.4534Z" fill="#FF781F" />
                                     </svg>
                                     <span>Электрика и вентиляция</span>
-                                </a>
+                                </RouterLink>
                             </div>
                         </li>
                         <li class="header_menu_item">
                             <div class="header_menu_item_wrap">
-                                <a href="">
+                                <RouterLink :to="ROUTES.catalog + '/new'">
                                     <svg width="44" height="36" viewBox="0 0 44 36" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -424,7 +498,7 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                                             fill="#FF781F" />
                                     </svg>
                                     <span>продукция grand line</span>
-                                </a>
+                                </RouterLink>
                             </div>
                         </li>
                     </ul>
@@ -449,7 +523,6 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                         <div class="header_top_wrap row">
                             <a href="tel:74954315426" class="phone"><b>+7 495</b> 431 54 26</a>
                             <div class="header_top_wrap_menu row">
-
                                 <div class="btn js_order_call row">
                                     <div class="icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -459,7 +532,7 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                                         </svg></div>
                                     <i>Обратный звонок</i>
                                 </div>
-                                <a href="" class="pdf" download>
+                                <a href="" download>
                                     <div class="icon"><svg width="15" height="14" viewBox="0 0 15 14" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -477,7 +550,7 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                                         </svg></div>
                                     <span>Написать нам</span>
                                 </a>
-                                <a href="">
+                                <RouterLink :to="ROUTES.delivery">
                                     <div class="icon"><svg width="15" height="16" viewBox="0 0 15 16" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -488,8 +561,8 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                                                 stroke="white" stroke-width="1.2" />
                                         </svg></div>
                                     <span>Доставка</span>
-                                </a>
-                                <a href="">
+                                </RouterLink>
+                                <RouterLink :to="ROUTES.contacts">
                                     <div class="icon"><svg width="15" height="14" viewBox="0 0 15 14" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -503,7 +576,7 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                                                 fill="white" />
                                         </svg></div>
                                     <span>Контакты</span>
-                                </a>
+                                </RouterLink>
                             </div>
                             <div class="header_icon">
                                 <HeaderCompareLink />
@@ -517,12 +590,14 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                             <div class="description">Доставим ваш заказ в лучшем виде, в указанный срок. Доставка
                                 осуществляется грузовым транспортом или курьером.</div>
                             <div class="sub_description">
-                                <div class="icon"><svg width="27" height="30" viewBox="0 0 27 30" fill="none"
+                                <div class="icon">
+                                    <svg width="27" height="30" viewBox="0 0 27 30" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M15.9744 19.0483H0.732955V14.7159H15.8608C17.0824 14.7159 18.0862 14.5218 18.8722 14.1335C19.6676 13.7453 20.2547 13.2055 20.6335 12.5142C21.0218 11.8229 21.2112 11.0133 21.2017 10.0852C21.2112 9.17614 21.0218 8.36174 20.6335 7.64205C20.2547 6.91288 19.6771 6.33996 18.9006 5.9233C18.1335 5.49716 17.1581 5.28409 15.9744 5.28409H10.2642V30H5.00852V0.90909H15.9744C18.2282 0.90909 20.1364 1.31629 21.6989 2.13068C23.2614 2.93561 24.4451 4.02936 25.25 5.41193C26.0644 6.78504 26.4716 8.3286 26.4716 10.0426C26.4716 11.8229 26.0597 13.3902 25.2358 14.7443C24.4119 16.089 23.2188 17.1449 21.6562 17.9119C20.0938 18.6695 18.1998 19.0483 15.9744 19.0483ZM16.642 21.2074V25.5398H0.732955V21.2074H16.642Z"
                                             fill="#FF781F" />
-                                    </svg></div>
+                                    </svg>
+                                </div>
                                 <span>Ваш заказ должен быть не менее 20.000 тысяч рублей</span>
                             </div>
                         </div>
@@ -535,7 +610,8 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                             <div class="mainbanner_products_preview_item">
                                 <div class="photo"><img src="/images/catalog/list/Mask%20group-2.png" /></div>
                                 <div class="text">
-                                    <a href="" class="name">Все для окрашивания потолка</a>
+                                    <RouterLink :to="ROUTES.catalog + '/new'" class="name">Все для окрашивания потолка
+                                    </RouterLink>
                                     <div class="desc">Всё очень просто - половину всех купленных стройматериалов Вы
                                         получаете по себестоимости, то есть по оптовой цене!</div>
                                 </div>
@@ -543,7 +619,8 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
                             <div class="mainbanner_products_preview_item">
                                 <div class="photo"><img src="/images/catalog/list/Mask%20group.png" /></div>
                                 <div class="text">
-                                    <a href="" class="name">Фасадные краски: все виды</a>
+                                    <RouterLink :to="ROUTES.catalog + '/new'" class="name">Фасадные краски: все виды
+                                    </RouterLink>
                                     <div class="desc">Всё очень просто - половину всех купленных стройматериалов Вы
                                         получаете по себестоимости, то есть по оптовой цене!</div>
                                 </div>
@@ -564,7 +641,6 @@ import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.
             </div>
             <span>Ваш заказ должен быть не менее 20.000 тысяч рублей</span>
         </div>
-
         <MainbannerFormMob />
     </div>
 </template>

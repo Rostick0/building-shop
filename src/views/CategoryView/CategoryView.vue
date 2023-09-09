@@ -46,12 +46,12 @@ const bradscubs = [
     },
     {
         id: 2,
-        link: ROUTES.category,
+        link: ROUTES.category + '/a',
         name: 'Каталог стройматериалов'
     },
     {
         id: 3,
-        link: ROUTES.catalog,
+        link: ROUTES.catalog + '/a',
         name: 'Стройматериалы'
     },
     {

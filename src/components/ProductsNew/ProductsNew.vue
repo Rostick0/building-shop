@@ -28,7 +28,7 @@ onMounted(() => {
         <div class="container">
             <div class="products_list row">
                 <ProductCart v-for="product in newProducts" @key="product.id" :product="product" />
-                <RouterLink :to="ROUTES.catalog" class="banner_to_catalog"></RouterLink>
+                <RouterLink :to="ROUTES.catalog + '/new'" class="banner_to_catalog"></RouterLink>
             </div>
         </div>
     </div>

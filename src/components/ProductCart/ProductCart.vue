@@ -16,7 +16,6 @@ const props = defineProps({
 const { product } = props;
 
 const countCart = ref(product?.countCart ?? 1);
-console.log(countCart);
 const countCartIncrement = () => countCart.value++;
 const countCartDecrement = () => countCart.value--;
 
