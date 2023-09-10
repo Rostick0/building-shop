@@ -16,10 +16,10 @@ export const usePopularStore = defineStore('popular', () => {
         }
     ]);
 
-    const popularAsyncGet = async () => {
+    const popularAsyncGet = async (query = '') => {
         return;
 
-        return axios.get(BACKEND_URL).
+        return axios.get(BACKEND_URL + query).
             then(res => res.json())
             .then(res => popular.value = res);
     }

@@ -1,14 +1,25 @@
 <script setup>
-import { defineAsyncComponent, onMounted } from 'vue';
+import { defineAsyncComponent, onMounted, ref } from 'vue';
 import { usePopularStore } from '@/app/stores/modules/popular'
 import { ROUTES } from '@/app/router/helper';
 import { storeToRefs } from 'pinia';
+import { getQuery } from '@/app/helpers/url';
 import ProductButtonsDefault from '@/components/ProductButtonsDefault/ProductButtonsDefault.vue';
 const ProductCart = defineAsyncComponent(() => import('@/components/ProductCart/ProductCart.vue'));
 
 const popularStore = usePopularStore();
 const { popularAsyncGet } = popularStore;
 const { popular } = storeToRefs(popularStore);
+
+const switchTab = ref(1);
+
+const popularGet = (switchTabid, param) => {
+    switchTab.value = switchTabid;
+
+    popularAsyncGet(
+        getQuery(param)
+    );
+}
 
 onMounted(() => {
     popularAsyncGet();
@@ -21,13 +32,21 @@ onMounted(() => {
             <div class="recomend_title row">
                 <h2>Вам может <b>понадобиться</b></h2>
                 <div class="recomend_product_tabs_panel row">
-                    <div class="recomend_product_tabs_item active" data-tab="1">Стройматериалы</div>
-                    <div class="recomend_product_tabs_item" data-tab="2">Отделочные материалы</div>
-                    <div class="recomend_product_tabs_item" data-tab="3">Инструменты</div>
-                    <div class="recomend_product_tabs_item" data-tab="4">Крепежные системы</div>
-                    <div class="recomend_product_tabs_item" data-tab="5">Сантехническая группа</div>
-                    <div class="recomend_product_tabs_item" data-tab="6">Отопление</div>
-                    <div class="recomend_product_tabs_item" data-tab="7">Электрика и вентиляция</div>
+                    <div class="recomend_product_tabs_item" :class="{ active: 1 === switchTab }" @click="popularGet(1, '')">
+                        Стройматериалы</div>
+                    <div class="recomend_product_tabs_item" :class="{ active: 2 === switchTab }" @click="popularGet(2, '')">
+                        Отделочные материалы</div>
+                    <div class="recomend_product_tabs_item" :class="{ active: 3 === switchTab }" @click="popularGet(3, '')">
+                        Инструменты</div>
+                    <div class="recomend_product_tabs_item" :class="{ active: 4 === switchTab }" @click="popularGet(4, '')">
+                        Крепежные системы</div>
+                    <div class="recomend_product_tabs_item" :class="{ active: 5 === switchTab }" @click="popularGet(5, '')">
+                        Сантехническая группа</div>
+                    <div class="recomend_product_tabs_item" :class="{ active: 6 === switchTab }" @click="popularGet(6, '')">
+                        Отопление</div>
+                    <div class="recomend_product_tabs_item" :class="{ active: 7 === switchTab }" @click="popularGet(7, '')">
+                        Электрика и вентиляция
+                    </div>
                     <RouterLink :to="ROUTES.catalog" class="recomend_product_tabs_item">весь каталог</RouterLink>
                 </div>
             </div>
