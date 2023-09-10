@@ -47,7 +47,7 @@ onMounted(() => {
                     <div class="recomend_product_tabs_item" :class="{ active: 7 === switchTab }" @click="popularGet(7, '')">
                         Электрика и вентиляция
                     </div>
-                    <RouterLink :to="ROUTES.catalog" class="recomend_product_tabs_item">весь каталог</RouterLink>
+                    <RouterLink :to="ROUTES.catalog + '/all'" class="recomend_product_tabs_item">весь каталог</RouterLink>
                 </div>
             </div>
             <div class="recomend_product_tabs_blocks">
