@@ -2,7 +2,7 @@
 import { defineAsyncComponent, onMounted } from 'vue';
 import { useCatalogStore } from '@/app/stores/modules/catalog'
 import { storeToRefs } from 'pinia';
-import { ROUTES } from '@/app/router/helper';
+import ProductButtonsDefault from '@/components/ProductButtonsDefault/ProductButtonsDefault.vue';
 import Pagination from '@/components/Pagination/Pagination.vue';
 const ProductCart = defineAsyncComponent(() => import('@/components/ProductCart/ProductCart.vue'));
 
@@ -17,7 +17,11 @@ onMounted(() => {
 
 <template>
     <div class="catalog_list row">
-        <ProductCart v-for="product in catalog" @key="product.id" :product="product" />
+        <ProductCart v-for="product in catalog" @key="product.id" :product="product">
+            <template v-slot:button-icons>
+                <ProductButtonsDefault :product="product" />
+            </template>
+        </ProductCart>
     </div>
 
     <Pagination />

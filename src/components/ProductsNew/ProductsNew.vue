@@ -1,8 +1,9 @@
 <script setup>
 import { defineAsyncComponent, onMounted } from 'vue';
-import { useNewProductsStore } from '@/app/stores/modules/newProduct'
+import { useNewProductsStore } from '@/app/stores/modules/newProduct';
 import { storeToRefs } from 'pinia';
 import { ROUTES } from '@/app/router/helper';
+import ProductButtonsDefault from '@/components/ProductButtonsDefault/ProductButtonsDefault.vue';
 const ProductCart = defineAsyncComponent(() => import('@/components/ProductCart/ProductCart.vue'));
 
 const newProductStore = useNewProductsStore();
@@ -27,9 +28,12 @@ onMounted(() => {
 
         <div class="container">
             <div class="products_list row">
-                <ProductCart v-for="product in newProducts" @key="product.id" :product="product" />
+                <ProductCart v-for="product in newProducts" @key="product.id" :product="product">
+                    <template v-slot:button-icons>
+                        <ProductButtonsDefault :product="product" />
+                    </template>
+                </ProductCart>
                 <RouterLink :to="ROUTES.catalog + '/new'" class="banner_to_catalog"></RouterLink>
             </div>
-        </div>
     </div>
-</template>
+</div></template>

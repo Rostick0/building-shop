@@ -2,6 +2,7 @@
 import { defineAsyncComponent, onMounted } from 'vue';
 import { usePopularStore } from '@/app/stores/modules/popular'
 import { storeToRefs } from 'pinia';
+import ProductButtonsDefault from '@/components/ProductButtonsDefault/ProductButtonsDefault.vue';
 const ProductCart = defineAsyncComponent(() => import('@/components/ProductCart/ProductCart.vue'));
 
 const popularStore = usePopularStore();
@@ -21,7 +22,11 @@ onMounted(() => {
                 <div class="title_products_all_wrap"><a href="" class="title_products_all">все новинки</a></div>
             </div>
             <div class="products_list row">
-                <ProductCart v-for="popularItem in popular" :product="popularItem" />
+                <ProductCart v-for="popularItem in popular" :product="popularItem">
+                    <template v-slot:button-icons>
+                        <ProductButtonsDefault :product="product" />
+                    </template>
+                </ProductCart>
             </div>
         </div>
     </div>
