@@ -1,6 +1,7 @@
 import axios from "axios";
 import { defineStore } from "pinia";
 import { ref } from "vue";
+import { BACKEND_URL } from "../helper";
 
 export const useLastReceiptStore = defineStore('lastReceipt', () => {
     const lastReceipts = ref([
@@ -57,7 +58,7 @@ export const useLastReceiptStore = defineStore('lastReceipt', () => {
     const lastReceiptAsyncGet = async () => {
         return;
 
-        return axios.get('').
+        return axios.get(BACKEND_URL).
             then(res => res.json())
             .then(res => lastReceipts.value = res);
     }

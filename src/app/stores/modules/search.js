@@ -15,10 +15,10 @@ export const useSearchStore = defineStore('search', () => {
         }
     ]);
 
-    const searchAsyncGet = async (title) => {
+    const searchAsyncGet = async (query) => {
         return;
 
-        return axios.get('' + title).
+        return axios.get('' + query).
             then(res => res.json())
             .then(res => search.value = res);
     }

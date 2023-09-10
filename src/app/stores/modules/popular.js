@@ -1,6 +1,7 @@
 import axios from "axios";
 import { defineStore } from "pinia";
 import { computed, ref, watch } from "vue";
+import { BACKEND_URL } from "../helper";
 
 export const usePopularStore = defineStore('popular', () => {
     const popular = ref([
@@ -18,7 +19,7 @@ export const usePopularStore = defineStore('popular', () => {
     const popularAsyncGet = async () => {
         return;
 
-        return axios.get('').
+        return axios.get(BACKEND_URL).
             then(res => res.json())
             .then(res => popular.value = res);
     }

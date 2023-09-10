@@ -1,6 +1,7 @@
 import axios from "axios";
 import { defineStore } from "pinia";
 import { computed, ref, watch } from "vue";
+import { BACKEND_URL } from "../helper";
 
 export const useRecommendationsStore = defineStore('recommendation', () => {
     const recommendation = ref([
@@ -18,7 +19,7 @@ export const useRecommendationsStore = defineStore('recommendation', () => {
     const recommendationAsyncGet = async () => {
         return;
 
-        return axios.get('').
+        return axios.get(BACKEND_URL).
             then(res => res.json())
             .then(res => recommendation.value = res);
     }

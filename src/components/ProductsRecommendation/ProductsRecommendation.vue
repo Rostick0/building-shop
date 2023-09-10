@@ -1,6 +1,7 @@
 <script setup>
 import { defineAsyncComponent, onMounted } from 'vue';
 import { usePopularStore } from '@/app/stores/modules/popular'
+import { ROUTES } from '@/app/router/helper';
 import { storeToRefs } from 'pinia';
 import ProductButtonsDefault from '@/components/ProductButtonsDefault/ProductButtonsDefault.vue';
 const ProductCart = defineAsyncComponent(() => import('@/components/ProductCart/ProductCart.vue'));
@@ -27,47 +28,17 @@ onMounted(() => {
                     <div class="recomend_product_tabs_item" data-tab="5">Сантехническая группа</div>
                     <div class="recomend_product_tabs_item" data-tab="6">Отопление</div>
                     <div class="recomend_product_tabs_item" data-tab="7">Электрика и вентиляция</div>
-                    <a href="" class="recomend_product_tabs_item">весь каталог</a>
+                    <RouterLink :to="ROUTES.catalog" class="recomend_product_tabs_item">весь каталог</RouterLink>
                 </div>
             </div>
             <div class="recomend_product_tabs_blocks">
-                <div class="recomend_product_tabs_block active" data-tab-content="1">
+                <div class="recomend_product_tabs_block active">
                     <div class="products_list row">
                         <ProductCart v-for="popularItem in popular" :product="popularItem">
                             <template v-slot:button-icons>
-                                <ProductButtonsDefault :product="product" />
+                                <ProductButtonsDefault :product="popularItem" />
                             </template>
                         </ProductCart>
-                    </div>
-                </div>
-                <div class="recomend_product_tabs_block" data-tab-content="2">
-                    <div class="products_list row">
-                        <ProductCart v-for="popularItem in popular" :product="popularItem" />
-                    </div>
-                </div>
-                <div class="recomend_product_tabs_block" data-tab-content="3">
-                    <div class="products_list row">
-                        <ProductCart v-for="popularItem in popular" :product="popularItem" />
-                    </div>
-                </div>
-                <div class="recomend_product_tabs_block" data-tab-content="4">
-                    <div class="products_list row">
-                        <ProductCart v-for="popularItem in popular" :product="popularItem" />
-                    </div>
-                </div>
-                <div class="recomend_product_tabs_block" data-tab-content="5">
-                    <div class="products_list row">
-                        <ProductCart v-for="popularItem in popular" :product="popularItem" />
-                    </div>
-                </div>
-                <div class="recomend_product_tabs_block" data-tab-content="6">
-                    <div class="products_list row">
-                        <ProductCart v-for="popularItem in popular" :product="popularItem" />
-                    </div>
-                </div>
-                <div class="recomend_product_tabs_block" data-tab-content="7">
-                    <div class="products_list row">
-                        <ProductCart v-for="popularItem in popular" :product="popularItem" />
                     </div>
                 </div>
             </div>
@@ -83,7 +54,7 @@ onMounted(() => {
             <div class="products_list row">
                 <ProductCart v-for="popularItem in popular" :product="popularItem">
                     <template v-slot:button-icons>
-                        <ProductButtonsDefault :product="product" />
+                        <ProductButtonsDefault :product="popularItem" />
                     </template>
                 </ProductCart>
             </div>

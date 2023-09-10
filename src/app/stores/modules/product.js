@@ -1,6 +1,7 @@
 import axios from "axios";
 import { defineStore } from "pinia";
 import { ref } from "vue";
+import { BACKEND_URL } from "../helper";
 
 export const useProductStore = defineStore('product', () => {
     const product = ref({
@@ -97,7 +98,7 @@ export const useProductStore = defineStore('product', () => {
     const productAsyncGet = async (id) => {
         return;
 
-        return axios.get('').
+        return axios.get(BACKEND_URL).
             then(res => res.json())
             .then(res => product.value = res);
     }

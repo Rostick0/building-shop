@@ -24,7 +24,7 @@ onMounted(() => {
             <div class="products_list row">
                 <ProductCart v-for="popularItem in popular" :product="popularItem">
                     <template v-slot:button-icons>
-                        <ProductButtonsDefault :product="product" />
+                        <ProductButtonsDefault :product="popularItem" />
                     </template>
                 </ProductCart>
             </div>
