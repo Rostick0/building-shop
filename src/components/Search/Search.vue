@@ -2,14 +2,22 @@
 import { useForm } from 'vee-validate';
 import { useSearchStore } from '@/app/stores/modules/search';
 import { getQuery } from '@/app/helpers/url';
+import { storeToRefs } from 'pinia';
 
-const { searchAsyncGet } = useSearchStore();
+const searchStore = useSearchStore();
+const { searchAsyncGet } = searchStore;
+const { search } = storeToRefs(searchStore);
+console.log(search);
 
 const { handleSubmit, defineInputBinds } = useForm();
 
-const search = defineInputBinds('search');
+const title = defineInputBinds('title');
 
 const onSubmit = handleSubmit(values => {
+    console.log(values)
+
+    if (values.title.length < 3) return;
+    
     searchAsyncGet(
         getQuery(values)
     );
@@ -18,8 +26,8 @@ const onSubmit = handleSubmit(values => {
 
 <template>
     <div class="search_panel_text">Доставка в день заказа </div>
-    <form class="search" @submit="onSubmit">
-        <input type="text" name="search" v-bind="search" placeholder="Поиск стройматериалов">
+    <form class="search" @input="onSubmit" @submit.prevent>
+        <input type="text" name="title" v-bind="title" placeholder="Поиск стройматериалов">
         <button type="submit">
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -28,4 +36,30 @@ const onSubmit = handleSubmit(values => {
             </svg>
         </button>
     </form>
+    
+    <div class="search-block" v-if="search?.length">
+        <div v-for="product in search" @key="product.id" class="seach-block__item">
+            <div class="search-block__info">
+                <div class="search-block__title">{{ product.name }}</div>
+                <div class="search-block__price">{{ product.price }} ₽</div>
+            </div>
+        </div>
+        
+    </div>
 </template>
+
+<style>
+.search-block {
+    background-color: white;
+    padding: 10px;
+    position: absolute;
+    right: 250px;
+    top: 50px;
+    z-index: 1;
+}
+
+.search-block__price {
+    font-size: 14px;
+    font-weight: 700;
+}
+</style>

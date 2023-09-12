@@ -5,7 +5,9 @@ import AsideNav from '@/components/AsideNav/AsideNav.vue';
 import Pagination from '@/components/Pagination/Pagination.vue';
 import ClearFavorite from '@/components/ClearFavorite/ClearFavorite.vue';
 import LayoutDefault from '@/layout/LayoutDefault/LayoutDefault.vue';
-
+import { ref } from 'vue';
+import Modal from '@/components/Modal/Modal.vue';
+import MainbannerForm from '@/components/MainbannerForm/MainbannerForm.vue';
 import { ROUTES } from '@/app/router/helper';
 
 const bradscubs = [
@@ -20,6 +22,8 @@ const bradscubs = [
         active: true
     }
 ];
+
+const activeModal = ref(false);
 </script>
 
 <template>
@@ -41,7 +45,7 @@ const bradscubs = [
                             <p>При нажатии на кнопку ОТПРАВИТЬ ЗАЯВКАУ, будет сформирован весь нужный список указанный в
                                 избранном</p>
                         </div>
-                        <div class="col-4 col-sm-12">
+                        <div class="col-4 col-sm-12" @click="(() => activeModal = true)">
                             <div class="btn">ОТПРАВИТЬ ЗАЯВКУ</div>
                         </div>
                     </div>
@@ -49,5 +53,8 @@ const bradscubs = [
                 </div>
             </div>
         </div>
+        <Modal v-if="activeModal" :outClick="(() => activeModal = false)">
+            <MainbannerForm />
+        </Modal>
     </LayoutDefault>
 </template>
