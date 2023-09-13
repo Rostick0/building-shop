@@ -24,7 +24,6 @@ import { ROUTES } from '@/app/router/helper';
         <div class="header">
             <div class="search_panel">
                 <div class="container row">
-                    <div class="search_panel_text">Доставка в день заказа </div>
                     <Search />
                 </div>
             </div>
