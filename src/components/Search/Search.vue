@@ -14,11 +14,12 @@ const { handleSubmit, defineInputBinds } = useForm();
 const title = defineInputBinds('title');
 
 const onSubmit = handleSubmit(values => {
-
     if (values.title.length < 3) {
         isActive.value = false
         return;
     }
+
+    isActive.value = true
 
     searchAsyncGet(
         getQuery(values)
@@ -30,7 +31,7 @@ const isActive = ref(false);
 
 <template>
     <div class="search_panel_text">Доставка в день заказа </div>
-    <div v-click-outside="(() => isActive = false)" @click="(isActive = true)">
+    <div v-click-outside="(() => isActive = false)">
         <form class="search" @input="onSubmit" @submit.prevent>
             <input type="text" name="title" v-bind="title" placeholder="Поиск стройматериалов">
             <button type="submit">
@@ -41,8 +42,7 @@ const isActive = ref(false);
                 </svg>
             </button>
         </form>
-
-        <div tabindex="-1" class="search-block" v-if="isActive && search?.length" @blur="(isActive = false)">
+        <div class="search-block" v-if="isActive && search?.length">
             <div v-for="product in search" @key="product.id" class="seach-block__item">
                 <div class="search-block__info">
                     <div class="search-block__title">{{ product.name }}</div>
