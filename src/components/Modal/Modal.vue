@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="modal" @click.prevent='outClick'>
+    <div class="modal" @click.self='outClick'>
         <div class="modal__inner">
             <slot></slot>
         </div>
