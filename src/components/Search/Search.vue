@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useForm } from 'vee-validate';
 import { useSearchStore } from '@/app/stores/modules/search';
 import { getQuery } from '@/app/helpers/url';
@@ -14,23 +14,23 @@ const { handleSubmit, defineInputBinds } = useForm();
 const title = defineInputBinds('title');
 
 const onSubmit = handleSubmit(values => {
-    console.log(values)
 
-    if (values.title.length < 3) return;
+    if (values.title.length < 3) {
+        isActive.value = false
+        return;
+    }
 
     searchAsyncGet(
         getQuery(values)
     );
 });
 
-const search_block = ref(null);
-
-console.log(search_block.value)
+const isActive = ref(false);
 </script>
 
 <template>
     <div class="search_panel_text">Доставка в день заказа </div>
-    <div ref="search_block">
+    <div v-click-outside="(() => isActive = false)" @click="(isActive = true)">
         <form class="search" @input="onSubmit" @submit.prevent>
             <input type="text" name="title" v-bind="title" placeholder="Поиск стройматериалов">
             <button type="submit">
@@ -42,7 +42,7 @@ console.log(search_block.value)
             </button>
         </form>
 
-        <div class="search-block" v-if="search?.length">
+        <div tabindex="-1" class="search-block" v-if="isActive && search?.length" @blur="(isActive = false)">
             <div v-for="product in search" @key="product.id" class="seach-block__item">
                 <div class="search-block__info">
                     <div class="search-block__title">{{ product.name }}</div>
