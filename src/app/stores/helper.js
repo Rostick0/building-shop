@@ -1,1 +1,2 @@
-export const BACKEND_URL = '';
+export const BACKEND_URL = 'http://45.151.144.81:8001';
+export const BACKEND_URL_API = BACKEND_URL + '/api';

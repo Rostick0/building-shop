@@ -1,7 +1,7 @@
 import axios from "axios";
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import { BACKEND_URL } from "../helper";
+import { BACKEND_URL_API } from "../helper";
 
 export const useProductStore = defineStore('product', () => {
     const product = ref({
@@ -76,7 +76,6 @@ export const useProductStore = defineStore('product', () => {
         Кабель с электрододержателем, медь 1,6 м – 1 шт.; Газовый шланг 3 м – 1 шт.; Ролик
         0,6-0,8 мм – 1 шт.`,
         functions: `Регулировка Hot Start (горячий старт). Увеличение сварочного (импульсного) тока в начальный момент для улучшения поджига дуги. Регулируется в пределах от 0 до 90%. Arc Force (стабильность горения дуги). Кратковременное увеличение силы тока в момент залипания электрода. Помогает капле оторваться от стержня электрода, делая тем самым процесс переноса капель через дуговой промежуток четким и равномерным. Anti Sticking (антиприлипание). Снижение сварочного тока для отделения залипшего электрода на изделии без повреждения обмазки. TIG Lift. Ручная сварка неплавящимся вольфрамовым электродом в среде защитного газа - аргона. Преимущественно используется для сварки цветных металлов и нержавеющих сталей`,
-
         detailed_information: 'подробная информация',
         instructions: 'инструкции',
         certificates: 'сертификаты',
@@ -95,12 +94,12 @@ export const useProductStore = defineStore('product', () => {
         ]
     });
 
-    const productAsyncGet = async (id) => {
-        return;
+    // const product = ref({})
 
-        return axios.get(BACKEND_URL).
-            then(res => res.json())
-            .then(res => product.value = res);
+    const productAsyncGet = async (id) => {
+        return axios.get(BACKEND_URL_API + '/product/get?id=' + id)
+            .then(res => product.value = res?.data)
+            // .then(res => product.value = res);
     }
 
     return { product, productAsyncGet };

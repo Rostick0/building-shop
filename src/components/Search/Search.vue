@@ -4,6 +4,7 @@ import { useForm } from 'vee-validate';
 import { useSearchStore } from '@/app/stores/modules/search';
 import { getQuery } from '@/app/helpers/url';
 import { storeToRefs } from 'pinia';
+import { throttle } from '@/app/helpers/optimization';
 
 const searchStore = useSearchStore();
 const { searchAsyncGet } = searchStore;
@@ -11,20 +12,22 @@ const { search } = storeToRefs(searchStore);
 
 const { handleSubmit, defineInputBinds } = useForm();
 
-const title = defineInputBinds('title');
+const SearchName = defineInputBinds('SearchName');
 
-const onSubmit = handleSubmit(values => {
-    if (values.title.length < 3) {
+const onSubmit = throttle(handleSubmit(values => {
+    if (values.SearchName.length < 3) {
         isActive.value = false
         return;
     }
 
     isActive.value = true
 
+    console.log(values);
+
     searchAsyncGet(
         getQuery(values)
     );
-});
+}), 200)
 
 const isActive = ref(false);
 </script>
@@ -33,7 +36,7 @@ const isActive = ref(false);
     <div class="search_panel_text">Доставка в день заказа </div>
     <div v-click-outside="(() => isActive = false)">
         <form class="search" @input="onSubmit" @submit.prevent>
-            <input type="text" name="title" v-bind="title" placeholder="Поиск стройматериалов">
+            <input type="text" name="SearchName" v-bind="SearchName" placeholder="Поиск стройматериалов">
             <button type="submit">
                 <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -46,7 +49,7 @@ const isActive = ref(false);
             <div v-for="product in search" @key="product.id" class="seach-block__item">
                 <div class="search-block__info">
                     <div class="search-block__title">{{ product.name }}</div>
-                    <div class="search-block__price">{{ product.price }} ₽</div>
+                    <div class="search-block__price">{{ product.priceLess100000 }} ₽</div>
                 </div>
             </div>
 
