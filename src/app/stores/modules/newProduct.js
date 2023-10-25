@@ -1,7 +1,7 @@
 import axios from "axios";
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import { BACKEND_URL } from "../helper";
+import { BACKEND_URL, BACKEND_URL_API_PRODUCT } from "../helper";
 
 export const useNewProductsStore = defineStore('newProduct', () => {
     const newProducts = ref([
@@ -17,11 +17,12 @@ export const useNewProductsStore = defineStore('newProduct', () => {
     ]);
 
     const newProductAsyncGet = async () => {
-        return;
+        // return;
 
-        return axios.get(BACKEND_URL).
-            then(res => res.json())
-            .then(res => newProducts.value = res);
+        return axios.get(BACKEND_URL_API_PRODUCT + '/new').
+            then(res => {
+                newProducts.value = res.data;
+            })
     }
 
     return { newProducts, newProductAsyncGet };

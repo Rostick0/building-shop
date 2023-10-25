@@ -1,7 +1,7 @@
 import axios from "axios";
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import { BACKEND_URL_API } from "../helper";
+import { BACKEND_URL_API_PRODUCT } from "../helper";
 
 export const useSearchStore = defineStore('search', () => {
     const search = ref([]);
@@ -21,7 +21,7 @@ export const useSearchStore = defineStore('search', () => {
 
         // return;
 
-        return axios.get(BACKEND_URL_API + '/product/getwithpaging' + query)
+        return axios.get(BACKEND_URL_API_PRODUCT + '/getwithpaging' + query)
             .then(res => {
                 console.log(res);
                 search.value = res.data.items
