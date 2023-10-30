@@ -100,7 +100,6 @@ const setSwitcher = number => switcher.value = number;
 </script>
 
 <template>
-    <pre>{{ props }}</pre>
     <div class="cartelement_top row">
         <div class="product_photo col-6 col-sm-12">
             <Swiper class="product_photo_slider_full" direction='horizontal' effect="fade" :speed="1200" grabCursor

@@ -515,7 +515,7 @@ import Search from '@/components/Search/Search.vue';
                             <a href="tel:74954315426" class="phone"><b>+7 495</b> 431 54 26</a>
                             <div class="header_top_wrap_menu row">
                                 <FeedBack />
-                                <a href="" download>
+                                <a :href="BACKEND_URL_API_PRICELIST" download>
                                     <div class="icon"><svg width="15" height="14" viewBox="0 0 15 14" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path

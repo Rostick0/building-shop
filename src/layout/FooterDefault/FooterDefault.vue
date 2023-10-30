@@ -1,5 +1,6 @@
 <script setup>
 import { ROUTES } from '@/app/router/helper.js';
+import { BACKEND_URL_API_PRICELIST } from '@/app/stores/helper'
 import FeedBack from '@/components/FeedBack/FeedBack.vue';
 
 import { useMenuMobileStore } from '@/app/stores/modules/menuMobile';
@@ -66,7 +67,7 @@ const setLink = url => {
                         </div>
                         <span>Контакты</span>
                     </RouterLink>
-                    <a href="" download>
+                    <a :href="BACKEND_URL_API_PRICELIST" download>
                         <div class="icon">
                             <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -336,7 +337,7 @@ const setLink = url => {
                 <a href="">Написать нам</a>
                 <a @click.prevent="setLink(ROUTES?.delivery)">Доставка</a>
                 <a @click.prevent="setLink(ROUTES?.contacts)">Контакты</a>
-                <a href="" download>Скачать прайс</a>
+                <a :href="BACKEND_URL_API_PRICELIST" download>Скачать прайс</a>
             </div>
             <a href="tel:74954315426" class="phone"><b>+7 495</b> 431 54 26</a>
             <div class="copyryght">1996 - 2023, ООО «Будем Строить» Стройматериалы и инструменты оптом и мелким оптом
