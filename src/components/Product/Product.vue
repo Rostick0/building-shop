@@ -4,42 +4,90 @@ import { Thumbs, EffectFade, FreeMode } from 'swiper/modules';
 import { defineProps, ref } from 'vue';
 import sanitizeHtml from 'sanitize-html';
 const props = defineProps({
+    id: {
+        type: Number
+    },
+    categoryId: {
+        type: Number
+    },
+    article: {
+        type: String
+    },
+    name: {
+        type: String
+    },
+    unit: {
+        type: String
+    },
     availability: {
         type: Boolean
     },
-    images: {
-        type: Array
+    brand: {
+        type: String
+    },
+    manufacturerArticle: {
+        type: String
+    },
+    weight: {
+        type: Number
+    },
+    priceLess100000: {
+        type: Number
+    },
+    priceMore100000: {
+        type: Number
+    },
+    priceMore500000: {
+        type: Number
+    },
+    updatedAt: {
+        type: String
+    },
+    imageUrl: {
+        type: String
     },
     description: {
         type: String
     },
-    table: {
+    сharacteristics: {
         type: Array
-    },
-    info: {
-        type: String
-    },
-    equipment: {
-        type: String
-    },
-    functions: {
-        type: String
-    },
-    detailed_information: {
-        type: String
-    },
-    instructions: {
-        type: String
-    },
-    certificates: {
-        type: String
-    },
-    count: {
-        type: Number
-    },
-    price: {
-        type: Number
     }
+    // availability: {
+    //     type: Boolean
+    // },
+    // images: {
+    //     type: Array
+    // },
+    // description: {
+    //     type: String
+    // },
+    // table: {
+    //     type: Array
+    // },
+    // info: {
+    //     type: String
+    // },
+    // equipment: {
+    //     type: String
+    // },
+    // functions: {
+    //     type: String
+    // },
+    // detailed_information: {
+    //     type: String
+    // },
+    // instructions: {
+    //     type: String
+    // },
+    // certificates: {
+    //     type: String
+    // },
+    // count: {
+    //     type: Number
+    // },
+    // price: {
+    //     type: Number
+    // }
 });
 
 const { images, description, table, info, equipment, functions, detailed_information, instructions, certificates, count, price } = props;
@@ -52,13 +100,14 @@ const setSwitcher = number => switcher.value = number;
 </script>
 
 <template>
+    <pre>{{ props }}</pre>
     <div class="cartelement_top row">
         <div class="product_photo col-6 col-sm-12">
             <Swiper class="product_photo_slider_full" direction='horizontal' effect="fade" :speed="1200" grabCursor
                 :mousewheel="false" :freeMode="false" :fadeEffect="{ crossFade: true }" loop
                 :thumbs="{ swiper: thumbsSwiper }" :modules="[Thumbs, EffectFade, FreeMode]">
-                <SwiperSlide v-for="image in images" @key="image.id" class="product_photo_slider_item swiper-slide">
-                    <div class="product_photo_slider_item_photo" :style="{ backgroundImage: `url(${image?.url})`, }"></div>
+                <SwiperSlide v-for="image in [imageUrl]" @key="image" class="product_photo_slider_item swiper-slide">
+                    <div class="product_photo_slider_item_photo" :style="{ backgroundImage: `url(${image})`, }"></div>
                     <div class="icons">
                         <div class="faw">
                             <svg width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,9 +130,9 @@ const setSwitcher = number => switcher.value = number;
             </Swiper>
             <Swiper class="product_photo_slider_smile_preview" spaceBetween="0" :freeMode="false" loop :speed="1200"
                 slidesPerView="4" @swiper="setThumbsSwiper" watch-slides-progress :modules="[Thumbs, FreeMode]">
-                <SwiperSlide v-for="image in images" @key="image.id"
+                <SwiperSlide v-for="image in [imageUrl]" @key="image"
                     class="product_photo_slider_smile_preview_item swiper-slide">
-                    <img :src="image?.url" alt="" />
+                    <img :src="image" alt="" />
                 </SwiperSlide>
             </Swiper>
         </div>
@@ -119,7 +168,7 @@ const setSwitcher = number => switcher.value = number;
                 </div>
                 <div class="prices">
                     <div class="price_desc">Цена за штуку</div>
-                    <div class="price">{{ price?.toLocaleString() }} ₽</div>
+                    <div class="price">{{ priceLess100000?.toLocaleString() }} ₽</div>
                 </div>
             </div>
         </div>
@@ -136,17 +185,22 @@ const setSwitcher = number => switcher.value = number;
         </div>
         <div class="cartelement_tab_content">
             <div class="cartelement_tab_content_item" :class="{ 'active': switcher === 1 }">
-                <!-- {{ table }} -->
-                <table>
-                    <tr v-for="(item, index) in table" @key="item.name">
+                <table v-if="сharacteristics?.length > 1">
+                    <tr v-for="(item, index) in сharacteristics" @key="index">
                         <template v-if="index % 2 == 0">
-                            <td>{{ item.name }}</td>
-                            <td>{{ item.value }}</td>
-                            <template v-if="table?.[index + 1].name">
-                                <td>{{ table?.[index + 1].name }}</td>
-                                <td>{{ table?.[index + 1].value }}</td>
-                            </template>
+                            <td>{{ item?.[0] }}</td>
+                            <td>{{ item?.[1] }}</td>
+                             <template v-if="сharacteristics?.[index + 1].name">
+                                <td>{{ сharacteristics?.[index + 1]?.[0] }}</td>
+                                <td>{{ сharacteristics?.[index + 1]?.[1] }}</td>
+                            </template> 
                         </template>
+                    </tr>
+                </table>
+                <table v-else-if="сharacteristics?.length">
+                    <tr>
+                        <td>{{ сharacteristics?.[0]?.[0] }}</td>
+                        <td>{{ сharacteristics?.[0]?.[1] }}</td>
                     </tr>
                 </table>
                 <p v-html="sanitizeHtml(info)"></p>

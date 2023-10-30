@@ -1,7 +1,7 @@
 import axios from "axios";
 import { defineStore } from "pinia";
-import { computed, ref, watch } from "vue";
-import { BACKEND_URL } from "../helper";
+import { ref } from "vue";
+import { BACKEND_URL_API_PRODUCT } from "../helper";
 
 export const usePopularStore = defineStore('popular', () => {
     const popular = ref([
@@ -17,11 +17,10 @@ export const usePopularStore = defineStore('popular', () => {
     ]);
 
     const popularAsyncGet = async (query = '') => {
-        return;
-
-        return axios.get(BACKEND_URL + query).
-            then(res => res.json())
-            .then(res => popular.value = res);
+        return axios.get(BACKEND_URL_API_PRODUCT + '/popular' + query)
+            .then(res => {
+                popular.value = res.data;
+            });
     }
 
     return { popular, popularAsyncGet };

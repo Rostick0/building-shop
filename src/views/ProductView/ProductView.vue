@@ -42,7 +42,7 @@ const { product } = storeToRefs(productStore);
 const route = useRoute();
 
 onMounted(() => {
-    // productAsyncGet(route.params.id);
+    productAsyncGet(route.params.id);
 });
 </script>
 
@@ -57,8 +57,7 @@ onMounted(() => {
                         <h1>{{ product.name }}</h1>
                         <div class="article">{{ product.article }}</div>
                     </div>
-                    <pre>{{ product }}</pre>
-                    <Product :="product" />
+                    <Product :="product" :сharacteristics="Object.entries(product?.сharacteristics ?? {})" />
                 </div>
             </div>
         </div>

@@ -18,11 +18,11 @@ onMounted(() => {
     <div class="popular_product">
         <div class="container">
             <div class="title_products row">
-                <h2>Популярная продукция<b>Grand Line</b></h2>
+                <h2>Популярная продукция <b>Grand Line</b></h2>
                 <div class="title_products_all_wrap"><a href="" class="title_products_all">все новинки</a></div>
             </div>
             <div class="products_list row">
-                <ProductCart v-for="popularItem in popular" :product="popularItem">
+                <ProductCart v-for="popularItem in popular?.items" @key="popularItem.id" :product="popularItem">
                     <template v-slot:button-icons>
                         <ProductButtonsDefault :product="popularItem" />
                     </template>
