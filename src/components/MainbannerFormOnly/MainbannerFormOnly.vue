@@ -1,24 +1,40 @@
 <script setup>
-import { useForm } from 'vee-validate';
+import { Form, Field, ErrorMessage } from 'vee-validate';
+import * as yup from "yup";
 import { useApplicationStore } from '@/app/stores/modules/application';
+import { useFavoritesStore } from '@/app/stores/modules/favorite';
 
-const { handleSubmit, defineInputBinds } = useForm();
+const { favorites } = useFavoritesStore();
 const { applicationAsyncCreate } = useApplicationStore();
 
-const name = defineInputBinds('name');
-const phone = defineInputBinds('phone');
-const email = defineInputBinds('email');
-
-const onSubmit = handleSubmit(values => {
-    applicationAsyncCreate(valeus);
+const schema = yup.object().shape({
+    name: yup.string().required().min(2),
+    phone: yup.string().required().min(8),
+    email: yup.string().required().email(),
 });
+
+const onSubmit = (values) => {
+    console.log({
+        ...values,
+        items: favorites?.map(item => {
+            return {
+                id: item.id,
+                count: item.countCart
+            }
+        })
+    });
+    // applicationAsyncCreate(valeus);
+};
 </script>
 
 <template>
-    <form method="post" @submit="onSubmit">
-        <input type="text" autocomplete="off" name="name" v-bind="name" required placeholder="Ваше имя">
-        <input type="tel" autocomplete="off" name="phone" v-bind="phone" required placeholder="Номер телефона">
-        <input type="email" autocomplete="off" name="email" v-bind="email" required placeholder="Электронная почта">
+    <Form method="post" @submit="onSubmit" v-slot="{ errors }" :validation-schema="schema">
+        <Field type="text" autocomplete="off" name="name" placeholder="Ваше имя" />
+        <ErrorMessage name="name" />
+        <Field type="tel" autocomplete="off" name="phone" required placeholder="Номер телефона" />
+        <ErrorMessage name="phone" />
+        <Field type="email" autocomplete="off" name="email" required placeholder="Электронная почта" />
+        <ErrorMessage name="email" />
         <button class="form_button" type="submit">отправить
             заявку</button>
         <div class="agreement">

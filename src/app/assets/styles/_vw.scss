@@ -406,8 +406,13 @@
 
     .mainbanner_form {
         width: 20.9375vw;
-        height: 21.145vw;
+        min-height: 21.145vw;
         padding: 1.25vw 2.4479vw;
+
+        @media (max-width: 900px) {
+            width: 100%;
+            max-width: 300px;
+        }
     }
 
     .mainbanner_form .logo {

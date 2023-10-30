@@ -1027,7 +1027,7 @@
 .mainbanner_form {
     position: relative;
     width: 402px;
-    height: 406px;
+    min-height: 406px;
     background: rgba(255, 255, 255, 0.46);
     display: flex;
     align-items: center;
