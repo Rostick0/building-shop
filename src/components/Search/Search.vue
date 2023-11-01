@@ -22,8 +22,6 @@ const onSubmit = throttle(handleSubmit(values => {
 
     isActive.value = true
 
-    console.log(values);
-
     searchAsyncGet(
         getQuery(values)
     );

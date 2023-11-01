@@ -10,8 +10,6 @@ export const usePopularStore = defineStore('popular', () => {
         return axios.get(BACKEND_URL_API_PRODUCT + '/popular' + query)
             .then(res => {
                 popular.value = res.data;
-                console.log(popular.value);
-
             });
     }
 
