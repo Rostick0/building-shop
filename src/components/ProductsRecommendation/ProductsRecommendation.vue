@@ -1,20 +1,22 @@
 <script setup>
 import { defineAsyncComponent, onMounted, ref } from 'vue';
-import { useProductStore } from '@/app/stores/modules/product'
 import { ROUTES } from '@/app/router/helper';
-import { storeToRefs } from 'pinia';
 import { getQuery } from '@/app/helpers/url';
 import ProductButtonsDefault from '@/components/ProductButtonsDefault/ProductButtonsDefault.vue';
+import { usePopularStore } from '@/app/stores/modules/popular';
+import { storeToRefs } from 'pinia'
 const ProductCart = defineAsyncComponent(() => import('@/components/ProductCart/ProductCart.vue'));
 
-const productStore = useProductStore();
-const { productAsyncGet } = productStore;
-const { product } = storeToRefs(productStore);
+// const { popular, popularAsyncGet } = usePopularStore();
+
+const popularStore = usePopularStore()
+const { popular } = storeToRefs(popularStore)
+const { popularAsyncGet } = popularStore;
 
 const switchTab = ref(1);
 
 onMounted(() => {
-    productAsyncGet();
+    popularAsyncGet();
 });
 
 const popularGet = (switchTabid, param) => {
@@ -71,7 +73,7 @@ const tabs = [
             <div class="recomend_product_tabs_blocks">
                 <div class="recomend_product_tabs_block active">
                     <div class="products_list row">
-                        <ProductCart v-for="productItem in product?.items" @key="productItem.id" :product="productItem">
+                        <ProductCart v-for="productItem in popular?.items" @key="productItem.id" :product="productItem">
                             <template v-slot:button-icons>
                                 <ProductButtonsDefault :product="productItem" />
                             </template>
