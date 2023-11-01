@@ -54,7 +54,7 @@ const activeModal = ref(false);
             </div>
         </div>
         <Modal v-if="activeModal" :outClick="(() => activeModal = false)">
-            <MainbannerForm />
+            <MainbannerForm :closeModal="(() => activeModal = false)" />
         </Modal>
     </LayoutDefault>
 </template>

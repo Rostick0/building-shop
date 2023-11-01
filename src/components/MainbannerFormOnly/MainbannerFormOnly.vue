@@ -1,10 +1,17 @@
 <script setup>
+import { defineProps } from 'vue';
 import { Form, Field, ErrorMessage } from 'vee-validate';
 import * as yup from "yup";
 import { useApplicationStore } from '@/app/stores/modules/application';
 import { useFavoritesStore } from '@/app/stores/modules/favorite';
 
-const { favorites } = useFavoritesStore();
+const props = defineProps({
+    closeModal: {
+        type: Function
+    }
+});
+
+const { favorites, favoriteClear } = useFavoritesStore();
 const { applicationAsyncCreate } = useApplicationStore();
 
 const schema = yup.object().shape({
@@ -13,8 +20,17 @@ const schema = yup.object().shape({
     email: yup.string().required().email(),
 });
 
-const onSubmit = (values) => {
-    console.log({
+const onSubmit = async (values) => {
+    // console.log({
+    //     ...values,
+    //     items: favorites?.map(item => {
+    //         return {
+    //             id: item.id,
+    //             count: item.countCart
+    //         }
+    //     })
+    // });
+    await applicationAsyncCreate({
         ...values,
         items: favorites?.map(item => {
             return {
@@ -23,12 +39,13 @@ const onSubmit = (values) => {
             }
         })
     });
-    // applicationAsyncCreate(valeus);
+    favoriteClear();
+    if (typeof props.closeModal === 'function') props.closeModal();
 };
 </script>
 
 <template>
-    <Form method="post" @submit="onSubmit" v-slot="{ errors }" :validation-schema="schema">
+    <Form method="post" @submit="onSubmit" :validation-schema="schema">
         <Field type="text" autocomplete="off" name="name" placeholder="Ваше имя" />
         <ErrorMessage name="name" />
         <Field type="tel" autocomplete="off" name="phone" required placeholder="Номер телефона" />
