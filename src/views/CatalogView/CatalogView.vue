@@ -6,6 +6,10 @@ import ProductsViewed from '@/components/ProductsViewed/ProductsViewed.vue';
 import Partners from '@/components/Partners/Partners.vue';
 import LayoutDefault from '@/layout/LayoutDefault/LayoutDefault.vue';
 import { ROUTES } from '@/app/router/helper';
+import { useRoute } from 'vue-router';
+
+
+const route = useRoute();
 
 const categories = [
     {
@@ -77,7 +81,7 @@ const bradscubs = [
                         <RouterLink v-for="category in categories" @key="category.id" class="subsection_item"
                             :to="ROUTES.category + '/' + category.id">{{ category.name }}</RouterLink>
                     </div>
-                    <ProductsCatalog />
+                    <ProductsCatalog :catalogId="route.params?.id" />
                 </div>
             </div>
         </div>
