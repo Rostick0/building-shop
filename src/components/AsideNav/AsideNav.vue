@@ -1,14 +1,19 @@
 <script setup>
 import { ROUTES } from '@/app/router/helper';
-import BuildingMaterials from './components/BuildingMaterials/BuildingMaterials.vue';
-import FinishingMaterials from './components/FinishingMaterials/FinishingMaterials.vue';
-import Tools from './components/Tools/Tools.vue';
-import FasteningSystems from './components/FasteningSystems/FasteningSystems.vue';
-import PlumbingGroup from './components/PlumbingGroup/PlumbingGroup.vue';
-import Heating from './components/Heating/Heating.vue';
-import ElectricsAndVentilation from './components/ElectricsAndVentilation/ElectricsAndVentilation.vue';
-import GrandLineProducts from './components/GrandLineProducts/GrandLineProducts.vue';
 import { BACKEND_URL_API_PRICELIST } from '@/app/stores/helper';
+import AsideNavItem from './components/AsideNavItem/AsideNavItem.vue';
+import { onMounted } from 'vue';
+import { useCategoriesStore } from '@/app/stores/modules/category';
+import { storeToRefs } from 'pinia';
+
+const categoriesStore = useCategoriesStore();
+const { categoryAsyncGet } = categoriesStore;
+const { categories } = storeToRefs(categoriesStore);
+
+onMounted(() => {
+    if (!categories.value?.length) categoryAsyncGet()
+});
+
 </script>
 
 <template>
@@ -16,14 +21,8 @@ import { BACKEND_URL_API_PRICELIST } from '@/app/stores/helper';
         <div class="header_menu">
             <RouterLink :to="ROUTES.main" class="logo"></RouterLink>
             <ul class="header_menu_nav">
-                <BuildingMaterials />
-                <FinishingMaterials />
-                <Tools />
-                <FasteningSystems />
-                <PlumbingGroup />
-                <Heating />
-                <ElectricsAndVentilation />
-                <GrandLineProducts />
+                <AsideNavItem v-for="(category, index) in categories" @key="category.id" :index="index"
+                    :category="category" />
                 <li class="header_menu_item">
                     <div class="header_menu_item_wrap">
                         <a :href="BACKEND_URL_API_PRICELIST" download>
