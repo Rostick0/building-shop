@@ -6,41 +6,47 @@ import ProductsViewed from '@/components/ProductsViewed/ProductsViewed.vue';
 import Partners from '@/components/Partners/Partners.vue';
 import LayoutDefault from '@/layout/LayoutDefault/LayoutDefault.vue';
 import { ROUTES } from '@/app/router/helper';
+import { useCategoriesStore } from '@/app/stores/modules/category'
+import { storeToRefs } from 'pinia';
 import { useRoute } from 'vue-router';
+import { findCategoryById } from '@/app/utils/category';
 
 
 const route = useRoute();
 
-const categories = [
-    {
-        id: 1,
-        name: 'Геотекстиль'
-    },
-    {
-        id: 2,
-        name: 'Пленки, мембраны, ленты, клеи'
-    },
-    {
-        id: 3,
-        name: 'Утеплители универсальные'
-    },
-    {
-        id: 4,
-        name: 'Пароизоляция для дома'
-    },
-    {
-        id: 5,
-        name: 'Гидроизоляция для дома'
-    },
-    {
-        id: 6,
-        name: 'Техническая изоляция'
-    },
-    {
-        id: 7,
-        name: 'Утеплители для дома'
-    }
-];
+const categoryStore = useCategoriesStore();
+const { currentCategory, currentCategoryWithPath } = categoryStore;
+const { categories } = storeToRefs(categoryStore);
+// const categories = [
+//     {
+//         id: 1,
+//         name: 'Геотекстиль'
+//     },
+//     {
+//         id: 2,
+//         name: 'Пленки, мембраны, ленты, клеи'
+//     },
+//     {
+//         id: 3,
+//         name: 'Утеплители универсальные'
+//     },
+//     {
+//         id: 4,
+//         name: 'Пароизоляция для дома'
+//     },
+//     {
+//         id: 5,
+//         name: 'Гидроизоляция для дома'
+//     },
+//     {
+//         id: 6,
+//         name: 'Техническая изоляция'
+//     },
+//     {
+//         id: 7,
+//         name: 'Утеплители для дома'
+//     }
+// ];
 
 const bradscubs = [
     {
@@ -50,7 +56,7 @@ const bradscubs = [
     },
     {
         id: 2,
-        link: ROUTES.category + '/a',
+        link: ROUTES.catalog + '/a',
         name: 'Каталог стройматериалов'
     },
     {
@@ -73,13 +79,14 @@ const bradscubs = [
                 <AsideNav />
                 <div class="col-9 col-sm-12">
                     <div class="text_page_top">
-                        <h1>Изоляционные <b>материалы</b></h1>
+                        <h1>{{ currentCategory(route.params?.id)?.name }}</h1>
                         <Bradscubs :bradscubs="bradscubs" />
+                        <!-- {{ currentCategoryWithPath(route.params?.id) }} -->
                     </div>
-                    <div class="subsection row">
-                        <!-- categories -->
-                        <RouterLink v-for="category in categories" @key="category.id" class="subsection_item"
-                            :to="ROUTES.category + '/' + category.id">{{ category.name }}</RouterLink>
+                    <div v-if="currentCategory(route.params?.id)?.subCategories" class="subsection row">
+                        <RouterLink v-for="category in currentCategory(route.params?.id)?.subCategories" @key="category.id"
+                            class="subsection_item" :to="ROUTES.catalog + '/' + category.id">{{ category.name }}
+                        </RouterLink>
                     </div>
                     <ProductsCatalog :catalogId="route.params?.id" />
                 </div>

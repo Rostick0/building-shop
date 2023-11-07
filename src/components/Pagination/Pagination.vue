@@ -59,15 +59,18 @@ const nextClick = () => {
         </div>
         <div class="page_nav_wrap col-4 col-sm-12 row">
             <div class="page_nav">
-
                 <span v-if="currentPage == 1">1</span>
                 <a @click.prevent="emits('page', 1)" v-else>1</a>
+
                 <a v-if="currentPage - 4 > 1" @click.prevent>...</a>
+
                 <template v-for="paginate in getPaginations(currentPage, totalPages)">
                     <a v-if="paginate != currentPage" @click.prevent="emits('page', paginate)" href="">{{ paginate }}</a>
                     <span v-else>{{ paginate }}</span>
                 </template>
+
                 <a v-if="currentPage + 4 < totalPages" @click.prevent>...</a>
+
                 <span v-if="currentPage == totalPages">{{ totalPages }}</span>
                 <a @click.prevent="emits('page', totalPages)" v-else>{{ totalPages }}</a>
             </div>

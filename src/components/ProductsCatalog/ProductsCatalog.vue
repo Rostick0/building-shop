@@ -15,8 +15,6 @@ const catalogStore = useCatalogStore();
 const { catalogAsyncGet } = catalogStore;
 const { catalog } = storeToRefs(catalogStore);
 
-const page = ref(1);
-
 const query = ref({
     Items: 12,
     CategoryId: props.catalogId,
@@ -46,7 +44,6 @@ const changePage = (value) => query.value.Page = value
             </template>
         </ProductCart>
     </div>
-    {{ query }}
     <Pagination v-if="catalog?.totalCountItems > query.Items" :currentPage="query.Page"
         :totalPages="Math.floor(catalog?.totalCountItems / 12)" @more="(() => query.Items += 12)" @page="changePage" />
 </template>

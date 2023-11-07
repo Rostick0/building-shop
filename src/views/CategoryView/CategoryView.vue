@@ -46,7 +46,7 @@ const bradscubs = [
     },
     {
         id: 2,
-        link: ROUTES.category + '/a',
+        link: ROUTES.catalog + '/a',
         name: 'Каталог стройматериалов'
     },
     {
@@ -75,7 +75,7 @@ const bradscubs = [
                     <div class="subsection row">
                         <!-- categories -->
                         <RouterLink v-for="category in categories" @key="category.id" class="subsection_item"
-                            :to="ROUTES.category + '/' + category.id">{{ category.name }}</RouterLink>
+                            :to="ROUTES.catalog + '/' + category.id">{{ category.name }}</RouterLink>
                     </div>
                     <ProductsCatalog />
                 </div>
