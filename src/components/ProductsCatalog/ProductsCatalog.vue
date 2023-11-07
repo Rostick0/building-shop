@@ -48,6 +48,5 @@ const changePage = (value) => query.value.Page = value
     </div>
     {{ query }}
     <Pagination v-if="catalog?.totalCountItems > query.Items" :currentPage="query.Page"
-        :totalPages="Math.floor(catalog?.totalCountItems / 12)" @more="(() => query.Items += 12)"
-        @page="changePage" />
+        :totalPages="Math.floor(catalog?.totalCountItems / 12)" @more="(() => query.Items += 12)" @page="changePage" />
 </template>
