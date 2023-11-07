@@ -1,9 +1,10 @@
 <script setup>
-import { defineAsyncComponent, onMounted, defineProps } from 'vue';
+import { defineAsyncComponent, onMounted, defineProps, ref, watch } from 'vue';
 import { useCatalogStore } from '@/app/stores/modules/catalog'
 import { storeToRefs } from 'pinia';
 import ProductButtonsDefault from '@/components/ProductButtonsDefault/ProductButtonsDefault.vue';
 import Pagination from '@/components/Pagination/Pagination.vue';
+import { getQuery } from '@/app/helpers/url';
 const ProductCart = defineAsyncComponent(() => import('@/components/ProductCart/ProductCart.vue'));
 
 const props = defineProps({
@@ -14,9 +15,27 @@ const catalogStore = useCatalogStore();
 const { catalogAsyncGet } = catalogStore;
 const { catalog } = storeToRefs(catalogStore);
 
-onMounted(() => {
-    catalogAsyncGet(props.catalogId);
+const page = ref(1);
+
+const query = ref({
+    Items: 12,
+    CategoryId: props.catalogId,
+    Page: 1,
 });
+
+onMounted(() => {
+    catalogAsyncGet(
+        getQuery(query.value)
+    );
+});
+
+watch(() => ({ ...query.value }), () => {
+    catalogAsyncGet(
+        getQuery(query.value)
+    );
+});
+
+const changePage = (value) => query.value.Page = value
 </script>
 
 <template>
@@ -27,6 +46,8 @@ onMounted(() => {
             </template>
         </ProductCart>
     </div>
-
-    <Pagination />
+    {{ query }}
+    <Pagination v-if="catalog?.totalCountItems > query.Items" :currentPage="query.Page"
+        :totalPages="Math.floor(catalog?.totalCountItems / 12)" @more="(() => query.Items += 12)"
+        @page="changePage" />
 </template>

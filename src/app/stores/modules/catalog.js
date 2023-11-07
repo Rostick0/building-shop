@@ -6,10 +6,9 @@ import { BACKEND_URL, BACKEND_URL_API_PRODUCT } from "../helper";
 export const useCatalogStore = defineStore('catalog', () => {
     const catalog = ref([]);
 
-    const catalogAsyncGet = async () => {
-        return axios.get(BACKEND_URL_API_PRODUCT + '/getwithpaging?Items=12')
+    const catalogAsyncGet = async (query) => {
+        return axios.get(BACKEND_URL_API_PRODUCT + '/getwithpaging' + query)
             .then(res => {
-                console.log(res);
                 catalog.value = res.data
             });
     }
