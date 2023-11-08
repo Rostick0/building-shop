@@ -5,7 +5,6 @@ export function findCategoryById(root, id) {
 
     while (queue.length > 0) {
         const node = queue.shift();
-        console.log(node)
         if (node.id == id) return node;
 
         if (node.subCategories && node.subCategories.length > 0) queue.push(...node.subCategories);
@@ -13,14 +12,19 @@ export function findCategoryById(root, id) {
 }
 
 export function findCategoryIdWithPath(tree, id, path = []) {
-    path.push({ id: tree.id, name: tree.name });
+    // if (Array.isArray(tree)) {
+    //     tree = { subCategories: tree };
+    // } else
+    if (tree.id && tree.name) {
+        path.push({ id: tree.id, name: tree.name });
+    }
 
-    if (tree.id === id) return path;
+    if (tree.id == id) return path;
 
     if (tree.subCategories) {
         for (let i = 0; i < tree.subCategories.length; i++) {
             const child = tree.subCategories[i];
-            const result = findIdWithPath(child, id, path);
+            const result = findCategoryIdWithPath(child, id, path);
 
             if (result) return result;
         }

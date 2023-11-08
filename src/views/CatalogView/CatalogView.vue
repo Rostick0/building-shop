@@ -80,8 +80,7 @@ const bradscubs = [
                 <div class="col-9 col-sm-12">
                     <div class="text_page_top">
                         <h1>{{ currentCategory(route.params?.id)?.name }}</h1>
-                        <Bradscubs :bradscubs="bradscubs" />
-                        <!-- {{ currentCategoryWithPath(route.params?.id) }} -->
+                        <Bradscubs :bradscubs="currentCategoryWithPath(route.params?.id)" />
                     </div>
                     <div v-if="currentCategory(route.params?.id)?.subCategories" class="subsection row">
                         <RouterLink v-for="category in currentCategory(route.params?.id)?.subCategories" @key="category.id"
