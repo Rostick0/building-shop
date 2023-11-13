@@ -114,7 +114,7 @@ import Search from '@/components/Search/Search.vue';
                         <RecentArrivalsGoods></RecentArrivalsGoods>
                         <div class="mainbanner_products_preview">
                             <div class="mainbanner_products_preview_item">
-                                <div class="photo"><img src="/images/catalog/list/Mask%20group-2.png" /></div>
+                                <div class="photo"><img src="/images/catalog/list/MaskGroup-2.png" /></div>
                                 <div class="text">
                                     <RouterLink :to="ROUTES.catalog + '/new'" class="name">Все для окрашивания потолка
                                     </RouterLink>
@@ -123,7 +123,7 @@ import Search from '@/components/Search/Search.vue';
                                 </div>
                             </div>
                             <div class="mainbanner_products_preview_item">
-                                <div class="photo"><img src="/images/catalog/list/Mask%20group.png" /></div>
+                                <div class="photo"><img src="/images/catalog/list/MaskGroup.png" /></div>
                                 <div class="text">
                                     <RouterLink :to="ROUTES.catalog + '/new'" class="name">Фасадные краски: все виды
                                     </RouterLink>

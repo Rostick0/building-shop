@@ -9,14 +9,14 @@
             <div class="partners_wrap">
                 <h2 class="title">наши <b>партнеры</b></h2>
                 <div class="partners_list row">
-                    <div class="partner_item"><img decoding="async" loading="lazy" src="/images/logos/image%2015.png"></div>
-                    <div class="partner_item"><img decoding="async" loading="lazy" src="/images/logos/image%2011.png"></div>
-                    <div class="partner_item"><img decoding="async" loading="lazy" src="/images/logos/image%2012.png"></div>
-                    <div class="partner_item"><img decoding="async" loading="lazy" src="/images/logos/image%2018.png"></div>
-                    <div class="partner_item"><img decoding="async" loading="lazy" src="/images/logos/image%209.png"></div>
-                    <div class="partner_item"><img decoding="async" loading="lazy" src="/images/logos/image%2016.png"></div>
-                    <div class="partner_item"><img decoding="async" loading="lazy" src="/images/logos/image%2019.png"></div>
-                    <div class="partner_item"><img decoding="async" loading="lazy" src="/images/logos/image%2020.png"></div>
+                    <div class="partner_item"><img decoding="async" loading="lazy" src="/images/logos/image15.png"></div>
+                    <div class="partner_item"><img decoding="async" loading="lazy" src="/images/logos/image11.png"></div>
+                    <div class="partner_item"><img decoding="async" loading="lazy" src="/images/logos/image12.png"></div>
+                    <div class="partner_item"><img decoding="async" loading="lazy" src="/images/logos/image18.png"></div>
+                    <div class="partner_item"><img decoding="async" loading="lazy" src="/images/logos/image9.png"></div>
+                    <div class="partner_item"><img decoding="async" loading="lazy" src="/images/logos/image16.png"></div>
+                    <div class="partner_item"><img decoding="async" loading="lazy" src="/images/logos/image19.png"></div>
+                    <div class="partner_item"><img decoding="async" loading="lazy" src="/images/logos/image20.png"></div>
                 </div>
             </div>
         </div>
