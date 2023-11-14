@@ -50,7 +50,6 @@ const isActive = ref(false);
                     <div class="search-block__price">{{ product.priceLess100000 }} ₽</div>
                 </div>
             </div>
-
         </div>
     </div>
 </template>

@@ -33,13 +33,14 @@ const onSubmit = async (values) => {
     await applicationAsyncCreate({
         ...values,
         items: favorites?.map(item => {
+            console.log(item);
             return {
                 id: item.id,
-                count: item.countCart
+                count: item?.countCart ?? 1
             }
         })
     });
-    favoriteClear();
+    // favoriteClear();
     if (typeof props.closeModal === 'function') props.closeModal();
 };
 </script>

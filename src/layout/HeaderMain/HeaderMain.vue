@@ -10,6 +10,7 @@ import MainbannerForm from '@/components/MainbannerForm/MainbannerForm.vue';
 import MainbannerFormMob from '@/components/MainbannerFormMob/MainbannerFormMob.vue';
 import FeedBack from '@/components/FeedBack/FeedBack.vue';
 import Search from '@/components/Search/Search.vue';
+import { BACKEND_URL_API_PRICELIST } from '@/app/stores/helper';
 </script>
 
 <template>

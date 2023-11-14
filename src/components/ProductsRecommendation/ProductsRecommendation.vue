@@ -19,11 +19,13 @@ onMounted(() => {
     popularAsyncGet();
 });
 
-const popularGet = (switchTabid, param) => {
+const popularGet = (switchTabid) => {
     switchTab.value = switchTabid;
 
     popularAsyncGet(
-        getQuery(param)
+        getQuery({
+            CategoryId: switchTabid
+        })
     );
 }
 
@@ -66,7 +68,7 @@ const tabs = [
                 <h2>Вам может <b>понадобиться</b></h2>
                 <div class="recomend_product_tabs_panel row">
                     <div v-for="tab in tabs" @key="tab.id" class="recomend_product_tabs_item"
-                        :class="{ active: tab.id === switchTab }" @click="popularGet(tab.id, '')">{{ tab.name }}</div>
+                        :class="{ active: tab.id === switchTab }" @click="popularGet(tab.id)">{{ tab.name }}</div>
                     <RouterLink :to="ROUTES.catalog + '/all'" class="recomend_product_tabs_item">весь каталог</RouterLink>
                 </div>
             </div>
