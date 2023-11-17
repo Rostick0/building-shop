@@ -7,7 +7,7 @@ export const useFavoritesStore = defineStore('favorite', () => {
     );
     const favoriteCount = computed(() => favorites?.value?.length ?? 0);
 
-    const checkFavorite = (id) => favorites?.value.findIndex(item => item.id === id) !== -1;
+    const checkFavorite = (id) => favorites?.value?.findIndex(item => item.id === id) !== -1;
 
     const favoriteAdd = favorite => {
         favorites.value = [...favorites.value, favorite];

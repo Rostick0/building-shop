@@ -1,5 +1,5 @@
 <script setup>
-import { defineAsyncComponent, onMounted, defineProps, ref, watch } from 'vue';
+import { defineAsyncComponent, onMounted, defineProps, ref, watch, watchEffect } from 'vue';
 import { useCatalogStore } from '@/app/stores/modules/catalog'
 import { storeToRefs } from 'pinia';
 import ProductButtonsDefault from '@/components/ProductButtonsDefault/ProductButtonsDefault.vue';
@@ -8,7 +8,7 @@ import { getQuery } from '@/app/helpers/url';
 const ProductCart = defineAsyncComponent(() => import('@/components/ProductCart/ProductCart.vue'));
 
 const props = defineProps({
-    catalogId: Number
+    catalogId: Number,
 });
 
 const catalogStore = useCatalogStore();
@@ -20,6 +20,15 @@ const query = ref({
     CategoryId: props.catalogId,
     Page: 1,
 });
+
+watchEffect(() => {
+    query.value = {
+        ...query,
+        CategoryId: props.catalogId,
+    }
+}, {
+    flush: 'post'
+})
 
 onMounted(() => {
     catalogAsyncGet(
@@ -38,6 +47,7 @@ const changePage = (value) => query.value.Page = value
 
 <template>
     <div class="catalog_list row">
+        <pre>{{ query }}</pre>
         <ProductCart v-for="product in catalog?.items" @key="product.id" :product="product">
             <template v-slot:button-icons>
                 <ProductButtonsDefault :product="product" />

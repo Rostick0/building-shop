@@ -7,69 +7,12 @@ import Partners from '@/components/Partners/Partners.vue';
 import LayoutDefault from '@/layout/LayoutDefault/LayoutDefault.vue';
 import { ROUTES } from '@/app/router/helper';
 import { useCategoriesStore } from '@/app/stores/modules/category'
-import { storeToRefs } from 'pinia';
 import { useRoute } from 'vue-router';
-import { findCategoryById } from '@/app/utils/category';
-
 
 const route = useRoute();
 
 const categoryStore = useCategoriesStore();
 const { currentCategory, currentCategoryWithPath } = categoryStore;
-const { categories } = storeToRefs(categoryStore);
-// const categories = [
-//     {
-//         id: 1,
-//         name: 'Геотекстиль'
-//     },
-//     {
-//         id: 2,
-//         name: 'Пленки, мембраны, ленты, клеи'
-//     },
-//     {
-//         id: 3,
-//         name: 'Утеплители универсальные'
-//     },
-//     {
-//         id: 4,
-//         name: 'Пароизоляция для дома'
-//     },
-//     {
-//         id: 5,
-//         name: 'Гидроизоляция для дома'
-//     },
-//     {
-//         id: 6,
-//         name: 'Техническая изоляция'
-//     },
-//     {
-//         id: 7,
-//         name: 'Утеплители для дома'
-//     }
-// ];
-
-const bradscubs = [
-    {
-        id: 1,
-        link: ROUTES.main,
-        name: 'Главная страница'
-    },
-    {
-        id: 2,
-        link: ROUTES.catalog + '/a',
-        name: 'Каталог стройматериалов'
-    },
-    {
-        id: 3,
-        link: ROUTES.catalog + '/a',
-        name: 'Стройматериалы'
-    },
-    {
-        id: 4,
-        name: 'Изоляционные материалы',
-        active: true
-    }
-];
 </script>
 
 <template>
