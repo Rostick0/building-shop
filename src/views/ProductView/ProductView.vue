@@ -1,7 +1,6 @@
 <script setup>
 import Bradscubs from '@/components/Bradscubs/Bradscubs.vue';
 import RecomemndCatalog from '@/components/RecomemndCatalog/RecomemndCatalog.vue';
-import ProductsSimilar from '@/components/ProductsSimilar/ProductsSimilar.vue';
 import AsideNav from '@/components/AsideNav/AsideNav.vue';
 import Product from '@/components/Product/Product.vue';
 import Partners from '@/components/Partners/Partners.vue';
@@ -11,6 +10,7 @@ import { useProductStore } from '@/app/stores/modules/product';
 import { storeToRefs } from 'pinia';
 import { onMounted } from 'vue';
 import { useRoute } from 'vue-router';
+import { useViewedsStore } from '@/app/stores/modules/viewed';
 
 const bradscubs = [
     {
@@ -39,10 +39,17 @@ const productStore = useProductStore();
 const { productAsyncGet } = productStore;
 const { product } = storeToRefs(productStore);
 
+const viewedsStore = useViewedsStore();
+const { viewedAdd } = viewedsStore;
+// const { product } = storeToRefs(viewedsStore);
+
 const route = useRoute();
 
 onMounted(() => {
-    productAsyncGet(route.params.id);
+    (async () => {
+        await productAsyncGet(route.params.id);
+        viewedAdd(product.value)
+    })()
 });
 </script>
 
@@ -61,7 +68,6 @@ onMounted(() => {
                 </div>
             </div>
         </div>
-        <ProductsSimilar />
         <RecomemndCatalog />
         <Partners />
     </LayoutDefault>

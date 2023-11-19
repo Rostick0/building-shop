@@ -46,6 +46,7 @@ const isActive = ref(false);
         <div class="search-block" v-if="isActive && search?.length">
             <div v-for="product in search" @key="product.id" class="seach-block__item">
                 <div class="search-block__info">
+                    {{ product }}
                     <div class="search-block__title">{{ product.name }}</div>
                     <div class="search-block__price">{{ product.priceLess100000 }} ₽</div>
                 </div>
@@ -61,7 +62,9 @@ const isActive = ref(false);
     position: absolute;
     right: 250px;
     top: 50px;
-    z-index: 1;
+    overflow: auto;
+    max-height: 600px;
+    z-index: 10000;
 }
 
 .search-block__price {
