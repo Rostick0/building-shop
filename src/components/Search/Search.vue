@@ -5,6 +5,8 @@ import { useSearchStore } from '@/app/stores/modules/search';
 import { getQuery } from '@/app/helpers/url';
 import { storeToRefs } from 'pinia';
 import { throttle } from '@/app/helpers/optimization';
+import { ROUTES } from '@/app/router/helper';
+import { useCategoriesStore } from '@/app/stores/modules/category';
 
 const searchStore = useSearchStore();
 const { searchAsyncGet } = searchStore;
@@ -27,6 +29,9 @@ const onSubmit = throttle(handleSubmit(values => {
     );
 }), 200)
 
+const categoryStore = useCategoriesStore();
+const { currentCategory } = categoryStore;
+
 const isActive = ref(false);
 </script>
 
@@ -46,9 +51,17 @@ const isActive = ref(false);
         <div class="search-block" v-if="isActive && search?.length">
             <div v-for="product in search" @key="product.id" class="seach-block__item">
                 <div class="search-block__info">
-                    {{ product }}
-                    <div class="search-block__title">{{ product.name }}</div>
-                    <div class="search-block__price">{{ product.priceLess100000 }} ₽</div>
+                    <!-- {{ product }} -->
+                    <RouterLink :to="ROUTES.product + '/' + product.id">
+                        <img :src="product.imageUrl" :alt="product.name" width="64" height="64">
+                    </RouterLink>
+                    <div>
+                        <RouterLink class="search-block__category" :to="ROUTES.catalog + '/' + categoryId">{{ currentCategory(product?.categoryId)?.name
+                        }}</RouterLink>
+                        <RouterLink class="search-block__title" :to="ROUTES.product + '/' + product.id">{{ product.name }}
+                        </RouterLink>
+                        <div class="search-block__price">{{ product.priceLess100000 }} ₽</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,11 +73,32 @@ const isActive = ref(false);
     background-color: white;
     padding: 10px;
     position: absolute;
-    right: 250px;
+    right: 200px;
     top: 50px;
     overflow: auto;
+    max-width: 800px;
+    width: 100%;
     max-height: 600px;
     z-index: 10000;
+}
+
+.search-block a {
+    color: #000;
+}
+
+.search-block__info {
+    display: flex;
+    column-gap: 20px;
+}
+
+.search-block__category {
+    font-size: 14px;
+    opacity: .7;
+}
+
+.search-block__title {
+    display: block;
+    margin: 4px 0;
 }
 
 .search-block__price {
