@@ -7,4 +7,5 @@ export const ROUTES = {
     delivery: '/delivery',
     favorite: '/favorite',
     product: '/product',
+    cart: '/cart',
 };

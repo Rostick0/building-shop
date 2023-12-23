@@ -1,11 +1,14 @@
 <script setup>
-import HeaderCompareLink from '@/components/HeaderCompareLink/HeaderCompareLink.vue';
-import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLink.vue';
+// import HeaderCompareLink from '@/components/HeaderCompareLink/HeaderCompareLink.vue';
+// import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLink.vue';
 import MobileOpenMenu from '@/components/MobileOpenMenu/MobileOpenMenu.vue';
 import SearchMobile from '@/components/SearchMobile/SearchMobile.vue';
 import Search from '@/components/Search/Search.vue';
 import FeedBack from '@/components/FeedBack/FeedBack.vue';
 import { ROUTES } from '@/app/router/helper';
+import { useCartsStore } from '@/app/stores/modules/cart';
+
+const { cartCount } = useCartsStore();
 </script>
 
 <template>
@@ -13,10 +16,10 @@ import { ROUTES } from '@/app/router/helper';
         <div class="mob_header">
             <RouterLink to="/" class="logo"></RouterLink>
             <div class="mob_header_mes">
-                <div class="header_icon">
-                    <HeaderCompareLink active count />
-                    <HeaderFavoriteLink active count />
-                </div>
+<!--                <div class="header_icon">-->
+<!--                    <HeaderCompareLink active count />-->
+<!--                    <HeaderFavoriteLink active count />-->
+<!--                </div>-->
                 <MobileOpenMenu />
             </div>
         </div>
@@ -43,17 +46,6 @@ import { ROUTES } from '@/app/router/helper';
                                 </svg>
                             </div>
                             <span>Скачать прайс</span>
-                        </a>
-                        <a href="">
-                            <div class="icon">
-                                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M9.90001 0H1.1C0.492251 0 0.00550127 0.615313 0.00550127 1.375L0 9.62497C0 10.3846 0.492251 11 1.1 11H9.90001C10.5078 11 11 10.3846 11 9.62497V1.375C11 0.615313 10.5078 0 9.90001 0ZM9.90001 9.62497H1.1V2.75002L5.49999 6.18749L9.90001 2.75002V9.62497ZM5.49999 4.81251L1.1 1.375H9.90001L5.49999 4.81251Z"
-                                        fill="white" />
-                                </svg>
-                            </div>
-                            <span>Написать нам</span>
                         </a>
                         <RouterLink :to="ROUTES.delivery">
                             <div class="icon">
@@ -85,9 +77,19 @@ import { ROUTES } from '@/app/router/helper';
                             <span>Контакты</span>
                         </RouterLink>
                     </div>
-                    <div class="header_icon">
-                        <HeaderCompareLink active count />
-                        <HeaderFavoriteLink active count />
+                    <div class="header_icon cart">
+                        <RouterLink :to="ROUTES.cart">
+                            <div class="icon">
+                                <span>{{ cartCount }}</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <g id="Group 9042964">
+                                        <path id="Vector" d="M5.03305 3.44444H23L20.5556 12H6.34931M21.7778 16.8889H7.11111L4.66667 1H1M8.33333 21.7778C8.33333 22.4528 7.78612 23 7.11111 23C6.4361 23 5.88889 22.4528 5.88889 21.7778C5.88889 21.1027 6.4361 20.5556 7.11111 20.5556C7.78612 20.5556 8.33333 21.1027 8.33333 21.7778ZM21.7778 21.7778C21.7778 22.4528 21.2306 23 20.5556 23C19.8805 23 19.3333 22.4528 19.3333 21.7778C19.3333 21.1027 19.8805 20.5556 20.5556 20.5556C21.2306 20.5556 21.7778 21.1027 21.7778 21.7778Z" stroke="#EE3810" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                </svg>
+                            </div>
+                        </RouterLink>
+<!--                        <HeaderCompareLink active count />-->
+<!--                        <HeaderFavoriteLink active count />-->
                     </div>
                 </div>
             </div>

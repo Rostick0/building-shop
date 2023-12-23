@@ -2,9 +2,9 @@
 import { defineProps, ref, watch } from 'vue';
 import { RouterLink } from 'vue-router';
 import { ROUTES } from '@/app/router/helper';
-import { useFavoritesStore } from '@/app/stores/modules/favorite';
+import { useCartsStore } from '@/app/stores/modules/cart';
 
-const { favoriteAdd } = useFavoritesStore();
+const { cartAdd } = useCartsStore();
 
 const props = defineProps({
     product: {
@@ -15,18 +15,18 @@ const props = defineProps({
 
 const { product } = props;
 
-const countCart = ref(product?.countCart ?? 1);
-const countCartIncrement = () => countCart.value++;
-const countCartDecrement = () => countCart.value--;
+const cartCount = ref(product?.cartCount ?? 1);
+const cartCountIncrement = () => cartCount.value++;
+const cartCountDecrement = () => cartCount.value--;
 
-const cartAdd = () => {
-    favoriteAdd({ ...product, countCart });
+const addToCart = () => {
+    cartAdd({ ...product, cartCount });
 }
 
-watch(countCart, () => {
-    if (countCart.value < 1) return countCart.value = 1;
+watch(cartCount, () => {
+    if (cartCount.value < 1) return cartCount.value = 1;
 
-    if (product?.countCart <= countCart.value) return product?.count;
+    if (product?.cartCount <= cartCount.value) return product?.count;
 })
 </script>
 
@@ -36,7 +36,9 @@ watch(countCart, () => {
             <slot name="button-icons"></slot>
         </div>
         <div class="photo">
-            <img decoding="async" loading="lazy" :src="product?.imageUrl" :alt="product?.name">
+            <RouterLink :to="ROUTES.product + '/' + product?.id">
+              <img decoding="async" loading="lazy" :src="product?.imageUrl" :alt="product?.name">
+            </RouterLink>
         </div>
         <RouterLink :to="ROUTES.product + '/' + product?.id" class="name">{{ product?.name }}</RouterLink>
         <div class="status">
@@ -49,16 +51,16 @@ watch(countCart, () => {
             </template>
         </div>
         <div class="prices">
-            <div class="price">{{ ((product?.priceLess100000 ?? 0) * countCart)?.toLocaleString() }} ₽</div>
+            <div class="price">{{ (product?.priceLess100000 ?? 0) ?.toLocaleString() }} ₽</div>
             <div class="price_desc">Цена за штуку</div>
         </div>
         <div class="btns">
-            <button class="btn" @click="cartAdd">заказать</button>
+            <button class="btn" @click="addToCart">заказать</button>
             <div class="count">
-                <input type="button" value="-" @click="countCartDecrement">
-                <input type="number" step="1" min="1" max="10" id="num_count" name="quantity" v-model="countCart"
+                <input type="button" value="-" @click="cartCountDecrement">
+                <input type="number" step="1" min="1" max="10" id="num_count" name="quantity" v-model="cartCount"
                     title="Qty">
-                <input type="button" value="+" @click="countCartIncrement">
+                <input type="button" value="+" @click="cartCountIncrement">
             </div>
         </div>
     </div>

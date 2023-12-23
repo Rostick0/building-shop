@@ -28,16 +28,6 @@ const setLink = url => {
                         оптом</div>
                 </div>
                 <div class="footer_menu footer_menu1">
-                    <a href="">
-                        <div class="icon">
-                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M9.90001 0H1.1C0.492251 0 0.00550127 0.615313 0.00550127 1.375L0 9.62497C0 10.3846 0.492251 11 1.1 11H9.90001C10.5078 11 11 10.3846 11 9.62497V1.375C11 0.615313 10.5078 0 9.90001 0ZM9.90001 9.62497H1.1V2.75002L5.49999 6.18749L9.90001 2.75002V9.62497ZM5.49999 4.81251L1.1 1.375H9.90001L5.49999 4.81251Z"
-                                    fill="white" />
-                            </svg>
-                        </div>
-                        <span>Написать нам</span>
-                    </a>
                     <RouterLink :to="ROUTES.delivery">
                         <div class="icon">
                             <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -334,7 +324,6 @@ const setLink = url => {
             <div class="top_menu">
                 <a @click.prevent="setLink(ROUTES?.main)">ГЛАВНАЯ</a>
                 <a @click.prevent="setLink(ROUTES?.catalog)">Каталог</a>
-                <a href="">Написать нам</a>
                 <a @click.prevent="setLink(ROUTES?.delivery)">Доставка</a>
                 <a @click.prevent="setLink(ROUTES?.contacts)">Контакты</a>
                 <a :href="BACKEND_URL_API_PRICELIST" download>Скачать прайс</a>

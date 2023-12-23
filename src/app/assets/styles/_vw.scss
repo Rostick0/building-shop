@@ -1,5 +1,9 @@
 @media (max-width: 1919px) {
 
+    .wrapper__content {
+        min-height: auto !important;
+    }
+
     .main_banner {
         height: 49.739vw;
     }
@@ -58,7 +62,7 @@
 
     .wrap_menu {
         padding: 2.5vw 2.8125vw;
-        left: 28.4375vw;
+        left: 27vw;
         height: 49.756vw;
         width: 35.571vw;
     }
@@ -907,6 +911,11 @@
         margin-bottom: 1.25vw;
     }
 
+    .catalog .text_page_top {
+        margin-top: 19px;
+        margin-bottom: 42px;
+    }
+
     .text_page h1 {
         font-size: 1.25vw;
         margin-top: 0;
@@ -1150,7 +1159,7 @@
         margin-bottom: 1.614vw;
     }
 
-
+    .catalog .text_page_top,
     .product_element .text_page_top {
         margin-top: 0.989vw;
         margin-bottom: 2.1875vw;
@@ -1725,7 +1734,7 @@
 
         .mainbanner_form_mob form .custom-checkbox+label::before {
             border: 1px solid #FF781F;
-            background: #FFF;
+            background-color: #FFF;
             width: 22px;
             height: 22px;
             margin-right: 29px;

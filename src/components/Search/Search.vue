@@ -49,6 +49,9 @@ const isActive = ref(false);
             </button>
         </form>
         <div class="search-block" v-if="isActive && search?.length">
+            <div class="seach-block__item" style="margin-bottom: 10px;">
+                <span>Товары для вас:</span>
+            </div>
             <div v-for="product in search" @key="product.id" class="seach-block__item">
                 <div class="search-block__info">
                     <!-- {{ product }} -->
@@ -73,11 +76,9 @@ const isActive = ref(false);
     background-color: white;
     padding: 10px;
     position: absolute;
-    right: 200px;
-    top: 50px;
     overflow: auto;
     max-width: 800px;
-    width: 100%;
+    width: auto;
     max-height: 600px;
     z-index: 10000;
 }

@@ -774,6 +774,25 @@
     height: 100%;
 }
 
+.header_icon.cart a{
+    width: 100%;
+}
+
+.header_icon.cart .icon {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 40px;
+    color: #EE3810;
+    text-align: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
 .header_icon a {
     width: 25px;
     height: 25px;
@@ -1028,13 +1047,25 @@
     position: relative;
     width: 402px;
     min-height: 406px;
-    background: rgba(255, 255, 255, 0.46);
+    background: rgba(255,255,255,.46);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     padding: 24px 47px;
-    align-content: flex-start;
+    align-content: center;
+}
+
+.mainbanner_form span[role='alert'] {
+    color: red;
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 12px;
+}
+
+.mainbanner_form.modal {
+    background: #FF781F;
 }
 
 .mainbanner_form .logo {
@@ -1066,7 +1097,7 @@
 
 .mainbanner_form form .form_button {
     border-radius: 8px;
-    background: #FF781F;
+    background: #333;
     box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.22);
     border: none;
     width: 100%;
@@ -1086,7 +1117,7 @@
 }
 
 .mainbanner_form form .form_button:hover {
-    background: #d65f10;
+    background: #505050;
 }
 
 .mainbanner_form form .agreement {
@@ -1102,10 +1133,29 @@
 
 .mainbanner_form form .custom-checkbox+label::before {
     border: 1px solid #FF781F;
-    background: #FFF;
+    background-color: #FFF;
     width: 22px;
     height: 22px;
     margin-right: 29px;
+}
+
+.errorMessageForm {
+    width: 90%;
+    background: #333;
+    height: 90%;
+    min-height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.errorMessageForm p{
+    color: white;
+    text-align: center;
+    padding: 0px;
+    white-space: pre-line;
 }
 
 .mainbanner_bg_photo {
