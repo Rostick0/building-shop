@@ -1,5 +1,9 @@
 @media (max-width: 1919px) {
 
+    .wrapper__content {
+        min-height: auto !important;
+    }
+
     .main_banner {
         height: 49.739vw;
     }
@@ -907,6 +911,11 @@
         margin-bottom: 1.25vw;
     }
 
+    .catalog .text_page_top {
+        margin-top: 19px;
+        margin-bottom: 42px;
+    }
+
     .text_page h1 {
         font-size: 1.25vw;
         margin-top: 0;
@@ -1150,7 +1159,7 @@
         margin-bottom: 1.614vw;
     }
 
-
+    .catalog .text_page_top,
     .product_element .text_page_top {
         margin-top: 0.989vw;
         margin-bottom: 2.1875vw;

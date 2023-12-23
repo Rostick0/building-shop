@@ -36,7 +36,9 @@ watch(countCart, () => {
             <slot name="button-icons"></slot>
         </div>
         <div class="photo">
-            <img decoding="async" loading="lazy" :src="product?.imageUrl" :alt="product?.name">
+            <RouterLink :to="ROUTES.product + '/' + product?.id">
+              <img decoding="async" loading="lazy" :src="product?.imageUrl" :alt="product?.name">
+            </RouterLink>
         </div>
         <RouterLink :to="ROUTES.product + '/' + product?.id" class="name">{{ product?.name }}</RouterLink>
         <div class="status">
@@ -49,7 +51,7 @@ watch(countCart, () => {
             </template>
         </div>
         <div class="prices">
-            <div class="price">{{ ((product?.priceLess100000 ?? 0) * countCart)?.toLocaleString() }} ₽</div>
+            <div class="price">{{ (product?.priceLess100000 ?? 0) ?.toLocaleString() }} ₽</div>
             <div class="price_desc">Цена за штуку</div>
         </div>
         <div class="btns">

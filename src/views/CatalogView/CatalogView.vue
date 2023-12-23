@@ -21,9 +21,9 @@ const { currentCategory, currentCategoryWithPath } = categoryStore;
             <div class="container row">
                 <AsideNav />
                 <div class="col-9 col-sm-12">
+                    <Bradscubs :bradscubs="currentCategoryWithPath(route.params?.id)" />
                     <div class="text_page_top">
-                        <h1>{{ currentCategory(route.params?.id)?.name }}</h1>
-                        <Bradscubs :bradscubs="currentCategoryWithPath(route.params?.id)" />
+                      <h1>{{ currentCategory(route.params?.id)?.name }}</h1>
                     </div>
                     <div v-if="currentCategory(route.params?.id)?.subCategories" class="subsection row">
                         <RouterLink v-for="category in currentCategory(route.params?.id)?.subCategories" @key="category.id"

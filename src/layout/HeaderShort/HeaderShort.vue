@@ -1,6 +1,6 @@
 <script setup>
-import HeaderCompareLink from '@/components/HeaderCompareLink/HeaderCompareLink.vue';
-import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLink.vue';
+// import HeaderCompareLink from '@/components/HeaderCompareLink/HeaderCompareLink.vue';
+// import HeaderFavoriteLink from '@/components/HeaderFavoriteLink/HeaderFavoriteLink.vue';
 import MobileOpenMenu from '@/components/MobileOpenMenu/MobileOpenMenu.vue';
 import SearchMobile from '@/components/SearchMobile/SearchMobile.vue';
 import Search from '@/components/Search/Search.vue';
@@ -13,10 +13,10 @@ import { ROUTES } from '@/app/router/helper';
         <div class="mob_header">
             <RouterLink to="/" class="logo"></RouterLink>
             <div class="mob_header_mes">
-                <div class="header_icon">
-                    <HeaderCompareLink active count />
-                    <HeaderFavoriteLink active count />
-                </div>
+<!--                <div class="header_icon">-->
+<!--                    <HeaderCompareLink active count />-->
+<!--                    <HeaderFavoriteLink active count />-->
+<!--                </div>-->
                 <MobileOpenMenu />
             </div>
         </div>
@@ -43,17 +43,6 @@ import { ROUTES } from '@/app/router/helper';
                                 </svg>
                             </div>
                             <span>Скачать прайс</span>
-                        </a>
-                        <a href="">
-                            <div class="icon">
-                                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M9.90001 0H1.1C0.492251 0 0.00550127 0.615313 0.00550127 1.375L0 9.62497C0 10.3846 0.492251 11 1.1 11H9.90001C10.5078 11 11 10.3846 11 9.62497V1.375C11 0.615313 10.5078 0 9.90001 0ZM9.90001 9.62497H1.1V2.75002L5.49999 6.18749L9.90001 2.75002V9.62497ZM5.49999 4.81251L1.1 1.375H9.90001L5.49999 4.81251Z"
-                                        fill="white" />
-                                </svg>
-                            </div>
-                            <span>Написать нам</span>
                         </a>
                         <RouterLink :to="ROUTES.delivery">
                             <div class="icon">
@@ -85,10 +74,10 @@ import { ROUTES } from '@/app/router/helper';
                             <span>Контакты</span>
                         </RouterLink>
                     </div>
-                    <div class="header_icon">
-                        <HeaderCompareLink active count />
-                        <HeaderFavoriteLink active count />
-                    </div>
+<!--                    <div class="header_icon">-->
+<!--                        <HeaderCompareLink active count />-->
+<!--                        <HeaderFavoriteLink active count />-->
+<!--                    </div>-->
                 </div>
             </div>
         </div>

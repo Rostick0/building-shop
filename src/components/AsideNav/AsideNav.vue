@@ -21,8 +21,7 @@ onMounted(() => {
         <div class="header_menu">
             <RouterLink :to="ROUTES.main" class="logo"></RouterLink>
             <ul class="header_menu_nav">
-                <AsideNavItem v-for="(category, index) in categories" @key="category.id" :index="index"
-                    :category="category" />
+                <AsideNavItem v-for="(category, index) in categories" @key="category.id" :index="index" :category="category" />
                 <li class="header_menu_item">
                     <div class="header_menu_item_wrap">
                         <a :href="BACKEND_URL_API_PRICELIST" download>
@@ -37,7 +36,9 @@ onMounted(() => {
                 </li>
             </ul>
             <div class="promobanner">
-                <img src="/images/banner_to_catalog.png">
+                <RouterLink :to="ROUTES.main">
+                    <img src="/images/banner_to_catalog.png">
+                </RouterLink>
             </div>
         </div>
     </div>

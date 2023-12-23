@@ -51,10 +51,7 @@ const onSubmit = async (values) => {
         <ErrorMessage name="name" />
         <Field type="tel" autocomplete="off" name="phone" required placeholder="Номер телефона" />
         <ErrorMessage name="phone" />
-        <Field type="email" autocomplete="off" name="email" required placeholder="Электронная почта" />
-        <ErrorMessage name="email" />
-        <button class="form_button" type="submit">отправить
-            заявку</button>
+        <button class="form_button" type="submit">Заказать звонок</button>
         <div class="agreement">
             <input type="checkbox" class="custom-checkbox" name="happy" checked="" disabled="">
             <label for="happy"></label>

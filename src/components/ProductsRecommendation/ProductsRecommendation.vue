@@ -2,7 +2,7 @@
 import { defineAsyncComponent, onMounted, ref } from 'vue';
 import { ROUTES } from '@/app/router/helper';
 import { getQuery } from '@/app/helpers/url';
-import ProductButtonsDefault from '@/components/ProductButtonsDefault/ProductButtonsDefault.vue';
+// import ProductButtonsDefault from '@/components/ProductButtonsDefault/ProductButtonsDefault.vue';
 import { usePopularStore } from '@/app/stores/modules/popular';
 import { storeToRefs } from 'pinia'
 const ProductCart = defineAsyncComponent(() => import('@/components/ProductCart/ProductCart.vue'));
@@ -76,9 +76,9 @@ const tabs = [
                 <div class="recomend_product_tabs_block active">
                     <div class="products_list row">
                         <ProductCart v-for="productItem in popular?.items" @key="productItem.id" :product="productItem">
-                            <template v-slot:button-icons>
-                                <ProductButtonsDefault :product="productItem" />
-                            </template>
+<!--                            <template v-slot:button-icons>-->
+<!--                                <ProductButtonsDefault :product="productItem" />-->
+<!--                            </template>-->
                         </ProductCart>
                     </div>
                 </div>

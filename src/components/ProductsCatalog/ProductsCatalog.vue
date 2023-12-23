@@ -2,7 +2,7 @@
 import { defineAsyncComponent, onMounted, defineProps, ref, watch, watchEffect } from 'vue';
 import { useCatalogStore } from '@/app/stores/modules/catalog'
 import { storeToRefs } from 'pinia';
-import ProductButtonsDefault from '@/components/ProductButtonsDefault/ProductButtonsDefault.vue';
+// import ProductButtonsDefault from '@/components/ProductButtonsDefault/ProductButtonsDefault.vue';
 import Pagination from '@/components/Pagination/Pagination.vue';
 import { getQuery } from '@/app/helpers/url';
 const ProductCart = defineAsyncComponent(() => import('@/components/ProductCart/ProductCart.vue'));
@@ -49,9 +49,9 @@ const changePage = (value) => query.value.Page = value
     <div class="catalog_list row">
         <pre>{{ query }}</pre>
         <ProductCart v-for="product in catalog?.items" @key="product.id" :product="product">
-            <template v-slot:button-icons>
-                <ProductButtonsDefault :product="product" />
-            </template>
+<!--            <template v-slot:button-icons>-->
+<!--                <ProductButtonsDefault :product="product" />-->
+<!--            </template>-->
         </ProductCart>
     </div>
     <Pagination v-if="catalog?.totalCountItems > query.Items" :currentPage="query.Page"

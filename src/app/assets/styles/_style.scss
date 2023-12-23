@@ -1028,13 +1028,13 @@
     position: relative;
     width: 402px;
     min-height: 406px;
-    background: rgba(255, 255, 255, 0.46);
+    background: #FF781F;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     padding: 24px 47px;
-    align-content: flex-start;
+    align-content: center;
 }
 
 .mainbanner_form .logo {
@@ -1066,7 +1066,7 @@
 
 .mainbanner_form form .form_button {
     border-radius: 8px;
-    background: #FF781F;
+    background: #333;
     box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.22);
     border: none;
     width: 100%;
@@ -1086,7 +1086,7 @@
 }
 
 .mainbanner_form form .form_button:hover {
-    background: #d65f10;
+    background: #505050;
 }
 
 .mainbanner_form form .agreement {
