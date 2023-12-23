@@ -18,6 +18,6 @@ const activeModal = ref(false);
         <i>Обратный звонок</i>
     </div>
     <Modal v-if="activeModal" :outClick="(() => activeModal = false)">
-        <MainbannerForm />
+        <MainbannerForm :isModal="true" />
     </Modal>
 </template>

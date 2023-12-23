@@ -7,6 +7,9 @@ import Search from '@/components/Search/Search.vue';
 import FeedBack from '@/components/FeedBack/FeedBack.vue';
 import { ROUTES } from '@/app/router/helper';
 import { BACKEND_URL_API_PRICELIST } from '@/app/stores/helper';
+import { useCartsStore } from '@/app/stores/modules/cart';
+
+const { cartCount } = useCartsStore();
 </script>
 
 <template>
@@ -71,10 +74,10 @@ import { BACKEND_URL_API_PRICELIST } from '@/app/stores/helper';
                             <span>Контакты</span>
                         </RouterLink>
                     </div>
-                    <div class="header_icon">
-                        <RouterLink :to="ROUTES.contacts">
+                    <div class="header_icon cart">
+                        <RouterLink :to="ROUTES.cart">
                             <div class="icon">
-                                <span>0</span>
+                                <span>{{ cartCount }}</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <g id="Group 9042964">
                                         <path id="Vector" d="M5.03305 3.44444H23L20.5556 12H6.34931M21.7778 16.8889H7.11111L4.66667 1H1M8.33333 21.7778C8.33333 22.4528 7.78612 23 7.11111 23C6.4361 23 5.88889 22.4528 5.88889 21.7778C5.88889 21.1027 6.4361 20.5556 7.11111 20.5556C7.78612 20.5556 8.33333 21.1027 8.33333 21.7778ZM21.7778 21.7778C21.7778 22.4528 21.2306 23 20.5556 23C19.8805 23 19.3333 22.4528 19.3333 21.7778C19.3333 21.1027 19.8805 20.5556 20.5556 20.5556C21.2306 20.5556 21.7778 21.1027 21.7778 21.7778Z" stroke="#EE3810" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
